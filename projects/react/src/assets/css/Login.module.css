@@ -1,0 +1,942 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin-top: 5px;
+    background-color: #E9E6DF;
+
+}
+body, header, section, footer {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+.active {
+    display: flex;
+}   
+
+
+
+
+/*______________ ______________ ______________ ______________ ______________*/
+/*WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER*/
+/*______________ ______________ ______________ ______________ ______________*/
+
+
+
+.wrapper-header {
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background-color: #E9E6DF;
+
+    position: fixed;
+    margin-top: -100px;
+    transition: transform 0.3s ease-out;
+}
+.wrapper-header.hidden {
+    transform: translateY(-100%);
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headerLeft {
+    font-family: "Baskervville SC", serif;
+    font-weight: bold;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 15px;
+
+}
+
+.headerRightA {
+    display: flex;
+    gap: 30px;
+}
+
+.headerRight-href {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href-active {
+    color: #BE6D54;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-href-active:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-img {
+    width: 50px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.closebtn{
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sidebar-href {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.sidebar-href-active {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #BE6D54;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-active {
+    width: 250px;
+}
+
+.sidebarLogin {
+    width: 300px;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    
+}
+.sidebarLogin a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: #BE6D54;
+
+}
+.sidebarLogin img {
+    width: 30px;
+
+}
+
+.sidebarLine {
+    width: 75%;
+    height: 1px;
+    background-color: #818181;
+
+    margin-left: 32px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.headerLine {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+
+.wrapper-nav {
+    width: 90%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navLeft {
+    width: 300px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.navRight {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+
+    margin-right: -10px;
+}
+
+.navRight a {
+    border: 0;
+    width: 50px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navRight p {
+    width: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+
+    display: flex;
+    justify-content: center;
+    transition: color 0.1s ease;
+} 
+
+.navRight p:hover {
+    color: #c48c7b;
+}
+
+.navRight img {
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-logo {
+    width: 100%;
+    height: 200px;
+    background-color: #0B322B;
+
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-logo h1 {
+    font-size: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #BE6D54;
+}
+
+.wrapper-login {
+    width: 100%;
+    height: 800px;
+
+    background-color: #F5F3EE;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.loginGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginGroup label {
+    font-size: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+}
+
+.loginGroup input {
+    background-color: transparent;
+
+    border: 1px solid #666;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    padding-bottom: 5px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 19px;
+
+    width: 330px;
+    color: #BE6D54;
+}
+
+.loginGroup input:focus {
+    background-color: transparent;
+
+    border: 1px solid #BE6D54;
+
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    outline: none;
+
+    width: 330px;
+
+    color: #BE6D54;
+}
+
+
+.loginButton {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 50px;
+}
+
+
+
+
+
+
+.registerGroupUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    padding-bottom: 50px;
+
+
+}
+
+.registerGroupDown {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+.registerGroupDownRight {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.registerAvatar {
+    width: 330px;
+    display: flex;
+    justify-content: center;
+}
+
+.registerAvatar img {
+    width: 150px;
+    height: auto;
+    
+}
+
+
+
+.registerGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.registerGroup label {
+    font-size: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+}
+
+.registerGroup input {
+    background-color: transparent;
+
+    border: 1px solid #666;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    padding-bottom: 5px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 19px;
+
+    width: 330px;
+    color: #BE6D54;
+}
+
+.registerGroup input:focus {
+    background-color: transparent;
+
+    border: 1px solid #BE6D54;
+
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    outline: none;
+
+    width: 330px;
+
+    color: #BE6D54;
+}
+
+
+.registerGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 20px;
+}
+
+.registerButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-item {
+    text-decoration: none;
+    position: relative;
+    padding: 10px 20px 10px;
+    font-size: 20px;
+    color: black;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    width: 330px;
+    text-align: center;
+}
+.btn-item:before, .btn-item:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: 1;
+}
+.btn-item:hover {
+    color: #BE6D54;
+    transition-delay: .6s;
+}
+.btn-item:hover:before {
+    transition-delay: 0s;
+}
+.btn-item:hover:after {
+    background: transparent;
+    transition-delay: .4s;
+}
+.btn-effect:before, .btn-effect:after {
+    top: 0;
+    width: 0;
+    height: 100%;
+}
+.btn-effect:before {
+    left: 0;
+    border: 1px solid #BE6D54;
+    border-left: 0;
+    border-right: 0;
+}
+.btn-effect:after {
+    right: 0;
+    top: 1px;
+}
+.btn-effect:hover:before, .btn-effect:hover:after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*_________________ _________________ _________________ _________________ _________________ */
+/*WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER */
+/*_________________ _________________ _________________ _________________ _________________ */
+
+
+
+.wrapper-wallpaper {
+    width: 100%;
+    height: auto;
+    position: fixed;
+
+    display: flex;
+    justify-content: end;
+    z-index: -40;
+}
+.wallpaper {
+    width: 100%;
+    height: 300px;
+}
+.wallpaper img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+
+    position: relative;
+    bottom: -400px;
+}
+
+
+
+/*___________ ___________ ___________ ___________ ___________*/
+/*WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ*/
+/*___________ ___________ ___________ ___________ ___________*/
+
+
+
+.wrapper-faq {
+    width: 100%;
+    height: 110px;
+    background-color: #E9E6DF;
+
+    display: flex;
+    justify-content: center;
+}
+
+.faq {
+    width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.faqLeft {
+    display: flex;
+    gap: 20px;
+}
+.faqLeft a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 13px;
+    transition: color 0.1s ease;
+}
+.faqLeft a:hover{
+    color: #BAC7C1;
+}
+
+.faqRight img {
+    width: 20px;
+}
+
+.faqRight{
+    display: flex;
+    -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+}
+
+.faqRight a {
+    color:#fff;
+    background: transparent;
+    border-radius:4px;
+    text-align:center;
+    text-decoration:none;
+    font-family:fontawesome;
+    position: relative;
+    display: inline-block;
+    width:40px;
+    height:28px;
+    margin:0 2px;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+
+.faqRight a span {
+    color:#666;
+    position:absolute;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    bottom:0;
+    left:-25px;
+    right:-25px;
+    padding:5px 7px;
+    z-index:-1;
+    font-size:14px;
+    border-radius:2px;
+    background:#fff;
+    visibility:hidden;
+    opacity:0;
+    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.faqRight a span:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position:absolute;
+    bottom:-5px;
+    left:40px;
+}
+  
+.faqRight a:hover span {
+    bottom:35px;
+    visibility:visible;
+    opacity:1;
+}
+
+
+
+/*___________ ___________ ___________ ___________ ___________*/
+/*WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END*/
+/*___________ ___________ ___________ ___________ ___________*/
+
+
+
+.wrapper-end {
+    width: 100%;
+    height: 75px;
+    background-color: #0B322B;
+
+    display: flex;
+    justify-content: center;
+}
+.end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.end p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+
+    font-size: 16px;
+}
+.end a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    transition: color 0.1s ease;
+}
+.end a:hover {
+    color: #BAC7C1;
+}
+
+
+
+
+
+
+
+
+.popup-class {
+    border-radius: 10px; /* закругленные углы */
+}
+
+.title-class {
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    color: #333;
+}
+
+.content-class {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #555;
+}
+
+.confirm-button-class {
+    background-color: #BE6D54;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.camera-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-icon img {
+    width: 50%;
+    height: auto;
+}
+
+.avatar-container:hover .camera-icon {
+    opacity: 1;
+}
+
+
+
+#cropperModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    background: white;
+    padding: 20px;
+    z-index: 100;
+}
+
+#cropperImage {
+    max-width: 100%;
+}
+#cropButton {
+    width: 100px;
+    height: 35px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+
+    font-size: 16px;
+
+    background-color: #BE6D54;
+    border: 0;
+
+    margin-top: 20px;
+}
+#cropButton:hover {
+    background-color: #c48c7b;
+}

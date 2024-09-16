@@ -1,0 +1,1461 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin-top: 5px;
+    background-color: #E9E6DF;
+
+}
+body, header, section, footer {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* Файл style.css */
+.fade-out {
+    animation: fadeOut 1s forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+
+.hidden {
+    display: none;
+}
+.active {
+    display: flex;
+}   
+
+
+
+/*______________ ______________ ______________ ______________ ______________*/
+/*WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER*/
+/*______________ ______________ ______________ ______________ ______________*/
+
+
+
+.wrapper-header {
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background-color: #E9E6DF;
+
+    position: fixed;
+    margin-top: -250px;
+    transition: transform 0.3s ease-out;
+}
+.wrapper-header.hidden {
+    transform: translateY(-100%);
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headerLeft {
+    font-family: "Baskervville SC", serif;
+    font-weight: bold;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 15px;
+
+}
+
+.headerRightA {
+    display: flex;
+    gap: 30px;
+}
+
+.headerRight-href {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href-active {
+    color: #BE6D54;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-href-active:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-img {
+    width: 50px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.closebtn{
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sidebar-href {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.sidebar-href-active {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #BE6D54;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-active {
+    width: 250px;
+}
+
+.sidebarLogin {
+    width: 300px;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    
+}
+.sidebarLogin a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: #BE6D54;
+
+}
+.sidebarLogin img {
+    width: 30px;
+
+}
+
+.sidebarLine {
+    width: 75%;
+    height: 1px;
+    background-color: #818181;
+
+    margin-left: 32px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.headerLine {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+
+.wrapper-nav {
+    width: 90%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navLeft {
+    width: 300px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.navRight {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+
+    margin-right: -10px;
+}
+
+.navRight a {
+    border: 0;
+    width: 50px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navRight p {
+    width: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+
+    display: flex;
+    justify-content: center;
+    transition: color 0.1s ease;
+} 
+
+.navRight p:hover {
+    color: #c48c7b;
+}
+
+.navRight img {
+    width: 30px;
+}
+
+#sidebarToggleBtn {
+    position: relative;
+
+    cursor: pointer;
+}
+
+.secondary-sidebar {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 5%; 
+    background-color: #E9E6DF;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    width: 130px;
+    height: 250px;
+
+}
+
+.secondary-sidebar a {
+    display: block;
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    color: black;
+    transition: color 0.1s ease;
+}
+
+.secondary-sidebar a:hover {
+    color: #BE6D54;
+}
+
+
+
+
+
+
+
+
+
+.wrapper-account {
+    width: 100%;
+    height: 950px;
+    margin-top: 115px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #F5F3EE;
+}
+
+.account {
+    width: 1300px;
+    height: 900px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+.account-navigation {
+    width: 300px;
+    height: 840px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.accountNavName {
+    width: 250px;
+    height: 250px;
+
+    margin-top: 30px;
+
+
+    background-color: #F5F3EE;
+    border: 1px solid black;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    position: relative;
+}
+.NavNameImg {
+    width: 30px;
+    top: 20px; 
+    left: 210px;
+    position: absolute;
+}
+
+#NavName {
+    width: 100px;
+    border-radius: 50%;
+}
+
+
+.third-sidebar {
+    display: none; 
+    position: fixed;
+    top: 50px;
+    left: -15px;
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+
+    position: absolute;
+
+}
+
+.third-sidebar a {
+    padding-bottom: 20px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.5 ease;
+    
+}
+
+.third-sidebar a:hover {
+    color: #BE6D54;
+}
+
+.thirdSidebar-line {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 1px;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+.accountNavName h1 {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    font-size: 18px;
+}
+
+.accountNavName p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    font-size: 16px;
+    color: #666;
+}
+
+.NavNameSub {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.NameSubLeft {    
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.NameSubLeft p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+} 
+.NameSubLeft h2 {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.NavNameLine {
+    width: 1px;
+    height: 30px;
+    background-color: #666;
+}
+
+.NameSubRight {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NameSubRight p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+} 
+.NameSubRight h2 {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+}
+
+
+
+.accountNavButton {
+    width: 250px;
+    height: 500px;
+
+    margin-top: 30px;
+    padding-left: 30px;
+
+
+    background-color: #F5F3EE;
+    border: 1px solid black;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+}
+.accountNavButton a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: none;
+
+    color: black;
+    transition: color 0.5 ease;
+}
+.accountNavButton a:hover {
+    color: #BE6D54;
+}
+
+
+.account-action {
+    width: 600px;
+    display: flex;
+    border: 1px solid black;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+    padding-top: 0;
+
+}
+
+.actionUp {
+    width: 530px;
+    display: flex;
+    align-items: center;
+    gap: 135px;
+}
+.actionUpLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+.actionUpLeft h3{
+    font-size: 30px;
+    color: #BE6D54;
+}
+
+.actionUpRight a {
+    width: 150px;
+    height: 35px;
+    border: 1px solid #BE6D54;
+    text-decoration: none;
+    color: #BE6D54;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.actionUpRight a:hover {
+    color: white;
+    background-color: #BE6D54;
+}
+
+.actionLine {
+    width: 530px;
+    height: 1px;
+    background-color: #c7c7c7;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.actionMiddle p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.actionMiddle button{
+    width: 530px;
+    height: 150px;
+    border: 1px solid #c7c7c7;
+    background-color: transparent;
+    color: #c7c7c7;
+
+    display: flex;
+    padding: 20px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.actionMiddle button:hover {
+    background-color: #c7c7c7;
+}
+
+.actionDownButton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actionDownButton p {
+    font-size: 20px;
+}
+.actionDownButton a {
+    text-decoration: none;
+    color: #BE6D54;
+    transition: color 0.5 ease;
+}
+.actionDownButton a:hover {
+    color: #c48c7b;
+}
+
+
+.DownPostsButtons {
+    width: 530px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.DownPostsButtons h4 {
+    font-size: 20px;
+}
+.DownPostsButtons button {
+    width: 200px;
+    height: 35px;
+    background-color: #BE6D54;
+    border: #BE6D54;
+
+    color: white;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.account-MyOrders {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    border: 1px solid black;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    padding: 30px;
+}
+
+.MyOrders h3 {
+    font-size: 25px;
+    color: #BE6D54;
+    padding-bottom: 10px;
+}
+
+.MyOrdersFunction {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.MyOrdersFunction a {
+    color: #BE6D54;
+}
+.MyOrdersFunction a:hover {
+    color: #c48c7b;
+}
+
+
+
+
+.account-files {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    background-color: white;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    padding: 30px;
+}
+
+.files {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.filesUp h3 {
+    font-size: 25px;
+    color: #BE6D54;
+    padding-bottom: 10px;
+}
+
+.filesMiddle {
+    margin-top: 30px;
+
+    display: flex;
+    gap: 20px;
+}
+
+.filesMiddle a {
+    border: black;
+    color: black;
+}
+.filesMiddle a:hover {
+    color: #BE6D54;
+}
+
+.filesLine {
+    width: 530px;
+    height: 1px;
+    background-color: #c7c7c7;
+
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.filesDownButton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filesDownButton a {
+    border: black;
+    color: black;
+}
+.filesDownButton a:hover {
+    color: #BE6D54;
+}
+
+.filesDownFunction {
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.filesFunctionExample {
+    width: 500px;
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.filesFunctionName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.filesFunctionExample img{
+    width: 40px;
+}
+.filesFunctionNameDop a {
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+.filesFunctionNameDop a:hover {
+    color: #666;
+}
+.filesFunctionNameDop p {
+    font-size: 13px;
+    color: #666;
+}
+
+
+.fileFunctionInfo {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.fileFunctionTime {
+    width: 50px;
+    font-size: 13px;
+}
+
+.fileFunctionInfo img{
+    width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.account-my {
+    width: 600px;
+    height: 900px;
+    display: flex;
+    border: 1px solid black;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    padding: 30px;
+}
+.myAccountUp {
+    width: 530px;
+    display: flex;
+    justify-content: space-between;
+}
+.myAccountUpLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.myAccountUpRight button {
+    width: 85px;
+    height: 30px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.myAccountReset {
+    background-color: transparent;
+    border: 1px solid #BE6D54;
+    color: #BE6D54;
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.myAccountReset:hover {
+    border: 1px solid #c48c7b;  
+    color: #c48c7b; 
+}
+
+.myAccountUpdate {
+    background-color: #BE6D54;
+    border: 1px solid #c48c7b;  
+    color: white;
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.myAccountUpdate:hover {
+    background-color: #c48c7b;
+    border: 1px solid #c48c7b;  
+}
+
+
+
+.myAccountLogin h2{
+    margin-bottom: 10px;
+}
+
+.myAccountLoginInput {
+    margin-top: 20px;
+    width: 530px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.myAccountLoginInputDown input {
+    width: 200px;
+    height: 30px;
+
+    background-color: transparent;
+    border: 1px solid #666;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+
+    padding: 5px;
+}
+
+
+.myAccountLoginInfo {
+    margin-top: 20px;
+    width: 530px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+
+.myAccountLoginButton {
+    width: 530px;
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+}
+.myAccountLoginButton button {
+    width: 85px;
+    height: 30px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.myAccountDown {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.myAccountDown h2 {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+.account-notifications {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    border: 1px solid black;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: left;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    padding: 30px;
+}  
+
+.notifications-function {
+    margin-top: 20px;
+    width: 530px;
+    height: 300px;
+    border: 1px solid rgb(182, 182, 182);
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.notification-alert {
+    text-align: center;
+}
+
+
+
+
+
+
+
+.account-settings {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    border: 1px solid black;
+
+    margin-top: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: left;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    padding: 30px;
+}
+
+
+
+.settings {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper-faq {
+    width: 100%;
+    height: 110px;
+    background-color: #E9E6DF;
+
+    display: flex;
+    justify-content: center;
+}
+
+.faq {
+    width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.faqLeft {
+    display: flex;
+    gap: 20px;
+}
+.faqLeft a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 13px;
+    transition: color 0.1s ease;
+}
+.faqLeft a:hover{
+    color: #BAC7C1;
+}
+
+.faqRight img {
+    width: 20px;
+}
+
+.faqRight{
+    display: flex;
+    -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+}
+
+.faqRight a {
+    color:#fff;
+    background: transparent;
+    border-radius:4px;
+    text-align:center;
+    text-decoration:none;
+    font-family:fontawesome;
+    position: relative;
+    display: inline-block;
+    width:40px;
+    height:28px;
+    margin:0 2px;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+
+.faqRight a span {
+    color:#666;
+    position:absolute;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    bottom:0;
+    left:-25px;
+    right:-25px;
+    padding:5px 7px;
+    z-index:-1;
+    font-size:14px;
+    border-radius:2px;
+    background:#fff;
+    visibility:hidden;
+    opacity:0;
+    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.faqRight a span:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position:absolute;
+    bottom:-5px;
+    left:40px;
+}
+  
+.faqRight a:hover span {
+    bottom:35px;
+    visibility:visible;
+    opacity:1;
+}
+
+
+
+/*___________ ___________ ___________ ___________ ___________*/
+/*WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END*/
+/*___________ ___________ ___________ ___________ ___________*/
+
+
+
+.wrapper-end {
+    width: 100%;
+    height: 75px;
+    background-color: #0B322B;
+
+    display: flex;
+    justify-content: center;
+}
+.end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.end p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
+.end a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    transition: color 0.1s ease;
+}
+.end a:hover {
+    color: #BAC7C1;
+}
+
+
+
+
+
+
+
+.hide {
+    display: none;
+}
+
+/* Общий стиль секций */
+.account-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Активная секция */
+.account-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация исчезновения */
+.account-section.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Анимация появления */
+.account-section.fade-in {
+    display: block;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+
+
+
+#user-avatar {
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.username {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+
+
+.avatar-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.camera-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-icon img {
+    width: 50%;
+    height: auto;
+}
+
+.avatar-container:hover .camera-icon {
+    opacity: 1;
+}
+
+
+
+#cropperModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    background: white;
+    padding: 20px;
+    z-index: 100;
+}
+
+#cropperImage {
+    max-width: 100%;
+}
+#cropButton {
+    width: 100px;
+    height: 35px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+
+    font-size: 16px;
+
+    background-color: #BE6D54;
+    border: 0;
+
+    margin-top: 20px;
+}
+#cropButton:hover {
+    background-color: #c48c7b;
+}

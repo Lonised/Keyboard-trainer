@@ -1,0 +1,1110 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin-top: 5px;
+    background-color: #E9E6DF;
+
+}
+body, header, section, footer {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* Файл style.css */
+.fade-out {
+    animation: fadeOut 1s forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+
+.hidden {
+    display: none;
+}
+.active {
+    display: flex;
+}   
+
+
+
+
+/*______________ ______________ ______________ ______________ ______________*/
+/*WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER*/
+/*______________ ______________ ______________ ______________ ______________*/
+
+
+
+
+
+
+
+.wrapper-header {
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background-color: #E9E6DF;
+
+    position: fixed;
+    margin-top: -250px;
+    transition: transform 0.3s ease-out;
+}
+.wrapper-header.hidden {
+    transform: translateY(-100%);
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headerLeft {
+    font-family: "Baskervville SC", serif;
+    font-weight: bold;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 15px;
+
+}
+
+.headerRightA {
+    display: flex;
+    gap: 30px;
+}
+
+.headerRight-href {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href-active {
+    color: #BE6D54;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.headerRight-href:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-href-active:hover {
+    color: #BAC7C1;
+}
+
+.headerRight-img {
+    width: 50px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.closebtn{
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sidebar-href {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.sidebar-href-active {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #BE6D54;
+    display: block;
+    transition: 0.3s;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-active {
+    width: 250px;
+}
+
+.sidebarLogin {
+    width: 300px;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    
+}
+.sidebarLogin a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: #BE6D54;
+
+}
+.sidebarLogin img {
+    width: 30px;
+
+}
+
+.sidebarLine {
+    width: 75%;
+    height: 1px;
+    background-color: #818181;
+
+    margin-left: 32px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+#sidebarToggleBtn {
+    position: relative;
+
+    cursor: pointer;
+}
+
+.secondary-sidebar {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 5%; 
+    background-color: #E9E6DF;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    width: 130px;
+    height: 250px;
+
+}
+
+.secondary-sidebar a {
+    display: block;
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    color: black;
+    transition: color 0.1s ease;
+}
+
+.secondary-sidebar a:hover {
+    color: #BE6D54;
+}
+
+.secondary-sidebar.visible {
+    display: block; /* Когда добавляется класс 'visible', sidebar показывается */
+  }
+
+.headerLine {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+
+.wrapper-nav {
+    width: 90%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navLeft {
+    width: 300px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+}
+
+.navRight {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+
+    margin-right: -10px;
+}
+
+.navRight a {
+    border: 0;
+    width: 50px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navRight p {
+    width: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 13px;
+    color: #BE6D54;
+
+    display: flex;
+    justify-content: center;
+    transition: color 0.1s ease;
+} 
+
+.navRight p:hover {
+    color: #c48c7b;
+}
+
+.navRight img {
+    width: 30px;
+}
+
+#user-avatar {
+    border-radius: 50%;
+}
+
+
+
+/*_____________ _____________ _____________ _____________ _____________*/
+/*WRAPPER-ABOUT WRAPPER-ABOUT WRAPPER-ABOUT WRAPPER-ABOUT WRAPPER-ABOUT*/
+/*_____________ _____________ _____________ _____________ _____________*/
+
+
+
+.wrapper-about {
+    width: 100%;
+    height: 560px;
+    margin-top: 250px;
+    background-color: #0B322B;
+
+    display: flex;
+    justify-content: center;
+
+}   
+
+.about {
+    width: 50%;
+    display: flex;
+}
+
+.aboutLeft img {
+    width: 450px;
+    height: 550px;
+    object-fit: cover;
+    
+    position: absolute;
+    top: 140px;
+
+}
+
+.aboutRight {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+
+    gap: 100px;
+
+    width: 400px;
+    margin-left: 500px;
+    padding-bottom: 30px;
+
+}
+
+.aboutRight-name {
+    font-size: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #BE6D54;
+
+    line-height: 1.9cm;
+    width: 650px;
+
+    position: absolute;
+    top: 300px;
+    left: 41.3%;
+
+}
+
+.aboutRight-info {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    font-size: 16px;
+
+    position: absolute;
+    top: 450px;
+
+}
+
+.aboutRight-href {
+    width: 70px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+    font-size: 16px;
+
+    text-decoration: none; 
+    transition: color 0.1s ease;
+}
+
+
+
+.aboutRight-href:hover {
+    color: #BE6D54;
+}
+
+
+
+/*_____________ _____________ _____________ _____________ _____________*/
+/*WRAPPER-PHOTO WRAPPER-PHOTO WRAPPER-PHOTO WRAPPER-PHOTO WRAPPER-PHOTO*/
+/*_____________ _____________ _____________ _____________ _____________*/
+
+
+
+.wrapper-photo {
+    width: 100%;
+    display: flex;
+}
+
+.wrapper-photo img {
+    width: 33.33%;
+    height: 450px;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.wrapper-projects {
+    width: 100%;
+    height: 700px;
+    background-color: #F5F3EE;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.projects h1 {
+    font-size: 50px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #BE6D54;
+}
+
+.projects p {
+    width: 300px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+
+    font-size: 16px;
+}
+
+.projects a {
+    width: 90px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 16px;
+    transition: 0.1s ease;
+}
+
+.projects a:hover {
+    color: #BE6D54;
+}
+
+
+
+/*_____________ _____________ _____________ _____________ _____________*/
+/*WRAPPER-POSTS WRAPPER-POSTS WRAPPER-POSTS WRAPPER-POSTS WRAPPER-POSTS*/
+/*_____________ _____________ _____________ _____________ _____________*/
+
+
+
+.wrapper-posts {
+    width: 100%;
+    height: 700px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 50px;
+
+    background-color: #E9E6DF;
+
+    margin-bottom: 100px;
+}
+
+.postsUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+}
+
+.postsUpLeft {
+    width: 200px;
+
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 50px;
+    color: #BE6D54;
+}
+
+.postsUpRight {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.postsUpRight p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+
+    font-size: 16px;
+}
+
+.postsUpRight a {
+    width: 70px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 16px;
+    transition: color 0.1s ease;
+}
+
+.postsUpRight a:hover {
+    color: #BE6D54;
+}
+
+.postsDown {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.posts {
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    transition: transform 0.5s ease;
+}
+
+.posts:hover {
+    transform: scale(1.1);
+}
+
+.posts img {
+    width: 300px;
+    height: 175px;
+
+}
+
+.postsInfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.postsInfo-name {
+    width: 260px;
+    padding-bottom: 10px;
+}
+
+.postsInfo-name a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 20px;
+    transition: 0.1s ease;
+}
+
+.postsInfo-name a:hover {
+    color: #BE6D54;
+}
+
+.postsInfo-href {
+    padding-top: 10px;
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+}
+
+.postsInfo-href p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 16px;
+    transition: 0.1s ease;
+}
+
+.postsInfo-href img {
+    width: 15px;
+    height: auto;
+    object-fit: cover;
+}
+ 
+
+
+/*_________________ _________________ _________________ _________________ _________________ */
+/*WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER WRAPPER-WALLPAPER */
+/*_________________ _________________ _________________ _________________ _________________ */
+
+
+
+.wrapper-wallpaper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: end;
+    z-index: -40;
+}
+.wallpaper {
+    width: 100%;
+}
+.wallpaper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+    position: relative;
+}
+
+
+
+/*___________ ___________ ___________ ___________ ___________*/
+/*WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ WRAPPER-FAQ*/
+/*___________ ___________ ___________ ___________ ___________*/
+
+
+
+.wrapper-faq {
+    width: 100%;
+    height: 110px;
+    background-color: #E9E6DF;
+
+    display: flex;
+    justify-content: center;
+}
+
+.faq {
+    width: 1140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.faqLeft {
+    display: flex;
+    gap: 20px;
+}
+.faqLeft a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+
+    font-size: 13px;
+    transition: color 0.1s ease;
+}
+.faqLeft a:hover{
+    color: #BAC7C1;
+}
+
+.faqRight img {
+    width: 20px;
+}
+
+.faqRight{
+    display: flex;
+    -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+}
+
+.faqRight a {
+    color:#fff;
+    background: transparent;
+    border-radius:4px;
+    text-align:center;
+    text-decoration:none;
+    font-family:fontawesome;
+    position: relative;
+    display: inline-block;
+    width:40px;
+    height:28px;
+    margin:0 2px;
+    -o-transition:all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+     -webkit-font-smoothing: antialiased;
+}
+
+
+.faqRight a span {
+    color:#666;
+    position:absolute;
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    bottom:0;
+    left:-25px;
+    right:-25px;
+    padding:5px 7px;
+    z-index:-1;
+    font-size:14px;
+    border-radius:2px;
+    background:#fff;
+    visibility:hidden;
+    opacity:0;
+    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.faqRight a span:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position:absolute;
+    bottom:-5px;
+    left:40px;
+}
+  
+.faqRight a:hover span {
+    bottom:35px;
+    visibility:visible;
+    opacity:1;
+}
+
+
+
+/*___________ ___________ ___________ ___________ ___________*/
+/*WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END*/
+/*___________ ___________ ___________ ___________ ___________*/
+
+
+
+.wrapper-end {
+    width: 100%;
+    height: 75px;
+    background-color: #0B322B;
+
+    display: flex;
+    justify-content: center;
+}
+.end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.end p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
+.end a {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    transition: color 0.1s ease;
+}
+.end a:hover {
+    color: #BAC7C1;
+}
+
+
+/*____________ ___________ ____________ ____________ _____________*/
+/*WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD*/
+/*____________ ___________ ____________ ____________ _____________*/
+
+
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    .headerRightA {
+        gap: 20px;
+    }
+
+    .about {
+        width: 85%;
+    }
+
+    .aboutRight-name {
+        width: 400px;
+        top: 270px;
+        left: 45%;
+    }
+
+    .aboutRight-info {
+        width: 300px;
+        margin-top: 15px;
+    }
+
+    .wrapper-photo img {
+        height: 400px;
+    }
+
+    .wrapper-posts {
+        align-items: center;
+    }
+
+    .postsDown {
+        width: 70%;
+        gap: 30px;
+    }
+
+    .posts {
+        width: 250px;
+    }
+
+    .posts img {
+        width: 250px;
+    }
+
+    .postsInfo {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .postsInfo-name {
+        width: 200px;
+    }
+
+    .postsInfo-name a {
+        font-size: 20px;
+    }
+
+    .postsInfo-href img {
+        width: 20px;
+    }
+    .faq {
+        width: 90%;
+        justify-content: space-between;
+    }
+}
+
+
+
+@media screen and (min-width: 319px) and (max-width: 375px) {
+    body {
+        max-width: 375px;
+    }
+
+    .wrapper-header {
+        max-width: 375px;
+    }
+
+    .header {
+        max-width: 375px;
+        justify-content: space-between;
+    }
+
+    .headerLeft {
+        font-size: 10px;
+    }
+    
+    .headerRightA {
+        display: none;
+    }
+
+    .navRight {
+        display: none;
+    }
+
+    .headerRight-img {
+        display: flex;
+    }
+
+    .sidebar-active {
+        width: 300px;
+    }
+
+
+    .wrapper-about {
+        max-width: 375px;
+        height: 900px;
+    }
+
+    .about {
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutLeft img {
+        width: 340px;
+        height: 440px;
+        object-fit: cover;
+        top: 350px;
+    }
+
+    .aboutRight {
+        padding: 0;
+    }
+
+    .aboutRight-name {
+        width: 375px;
+        text-align: center;
+        font-size: 40px;
+        left: -60px;
+        top: 280px;
+
+        line-height: 1.8cm;
+    }
+
+    .aboutRight-name h1 {
+        width: 375px;
+        padding-left: 120px;
+        text-align: center;
+    }
+
+    .aboutRight-info {
+        width: 340px;
+        top: 850px;
+        left: 20px;
+
+        font-size: 16px;
+        text-align: center;
+    }
+
+
+
+    .wrapper-photo {
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper-photo img {
+        width: 100%;
+        height: 400px;
+    }
+
+
+
+    .wrapper-projects {
+        max-width: 375px;
+    }
+
+    .projects {
+        text-align: center;
+    }
+
+    .wrapper-posts {
+        max-width: 375px;
+        height: 1750px;
+    }
+
+    .postsUp {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postsUpLeft {
+        width: 300px;
+        text-align: center;
+    }
+
+    .postsUpRight {
+        width: 300px;
+        text-align: center;
+    }
+
+    .postsDown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .wrapper-wallpaper {
+        margin-top: -100px;
+    }
+
+
+
+    .wrapper-faq {
+        max-width: 375px;
+        height: 100px;
+    
+    }
+    .faq {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .faqRight a span{
+        display: none;
+    }
+
+
+
+    .wrapper-end {
+        max-width: 375px;
+    }
+    .end {
+        text-align: center;
+        width: 300px;
+    }
+}

@@ -1,11 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../assets/css/Home.module.css';
+import styles from '../assets/css/Projects.module.css';
 import menuImg from '../assets/img/menu.png';
 import profileImg from '../assets/img/profile.png';
 import downArrowImg from '../assets/img/downArrow.png';
 
 
 const Projects = () => {
+    const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+    const [isSecondarySidebarVisible, setIsSecondarySidebarVisible] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarVisible(!isSidebarVisible);
+    };
+
+    const toggleSecondarySidebar = () => {
+        setIsSecondarySidebarVisible(!isSecondarySidebarVisible);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 150) {
+                setIsHeaderHidden(true);
+            } else {
+                setIsHeaderHidden(false);
+            }
+        };
+
+        const handleClickOutside = (event) => {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar && !sidebar.contains(event.target)) {
+                setIsSidebarVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        if (isSidebarVisible) {
+            document.addEventListener('click', handleClickOutside);
+          }
+      
+          return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isSidebarVisible]);
+
     return (
         <div>            
             <header className={`${styles['wrapper-header']} ${isHeaderHidden ? styles.hidden : ''}`}>
@@ -136,8 +176,50 @@ const Projects = () => {
             </div>
 
 
+            <section className={styles['wrapper-faq']}>
+                <div className={styles.faq}>
+                    <div className={styles.faqLeft}>
+                    <a href="#">Story Policy</a>
+                    <a href="#">Shipping & Returns</a>
+                    <a href="#">FAQ</a>
+                    </div>
+                    <div className={styles.faqRight}>
+                    <div className={styles.faqRightIcon}>
+                        <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/" target="_blank" rel="noopener noreferrer">
+                        <img src={linkedinImg} alt="LinkedIn" />
+                        <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    <div className={styles.faqRightIcon}>
+                        <a href="https://github.com/Lonised" target="_blank" rel="noopener noreferrer">
+                        <img src={githubImg} alt="GitHub" />
+                        <span>GitHub</span>
+                        </a>
+                    </div>
+                    <div className={styles.faqRightIcon}>
+                        <a href="https://x.com/lonised_" target="_blank" rel="noopener noreferrer">
+                        <img src={twitterImg} alt="Twitter" />
+                        <span>Twitter</span>
+                        </a>
+                    </div>
+                    <div className={styles.faqRightIcon}>
+                        <a href="https://www.instagram.com/lonised_/" target="_blank" rel="noopener noreferrer">
+                        <img src={instagramImg} alt="Instagram" />
+                        <span>Instagram</span>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </section>
+
+                <footer className={styles['wrapper-end']}>
+                <div className={styles.end}>
+                    <p>© 2024 by Daniil D. Shterkel. Powered and secured by <a href="#">Wix</a></p>
+                </div>
+            </footer>
         </div>
-    )
-}
+    );
+
+};
 
 export default Projects;

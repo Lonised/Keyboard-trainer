@@ -15,48 +15,12 @@ body, header, section, footer {
     transition: opacity 1s ease-out;
 }
 
-/* Файл style.css */
-.fade-out {
-    animation: fadeOut 1s forwards;
-  }
-  
-  .fade-in {
-    animation: fadeIn 1s forwards;
-  }
-  
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-}
-  
-
 .hidden {
     display: none;
 }
 .active {
     display: flex;
 }   
-
-
-
-/*______________ ______________ ______________ ______________ ______________*/
-/*WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER WRAPPER-HEADER*/
-/*______________ ______________ ______________ ______________ ______________*/
-
-
 
 .wrapper-header {
     width: 100%;
@@ -69,9 +33,10 @@ body, header, section, footer {
     background-color: #E9E6DF;
 
     position: fixed;
-    margin-top: -250px;
+    margin-top: -115px;
     transition: transform 0.3s ease-out;
 }
+
 .wrapper-header.hidden {
     transform: translateY(-100%);
 }
@@ -138,14 +103,6 @@ body, header, section, footer {
     display: none;
 }
 
-
-
-
-
-
-
-
-
 .sidebar {
     height: 100%;
     width: 0;
@@ -195,8 +152,6 @@ body, header, section, footer {
     font-weight: 500;
     font-style: normal;
 }
-
-
 
 .sidebar a:hover {
     color: #f1f1f1;
@@ -248,13 +203,6 @@ body, header, section, footer {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -464,6 +412,7 @@ body, header, section, footer {
     width: 100px;
     border-radius: 50%;
 }
+
 
 
 .third-sidebar {
@@ -1265,14 +1214,6 @@ body, header, section, footer {
     opacity:1;
 }
 
-
-
-/*___________ ___________ ___________ ___________ ___________*/
-/*WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END WRAPPER-END*/
-/*___________ ___________ ___________ ___________ ___________*/
-
-
-
 .wrapper-end {
     width: 100%;
     height: 75px;
@@ -1304,91 +1245,15 @@ body, header, section, footer {
     color: #BAC7C1;
 }
 
-
-
-
-
-
-
-.hide {
-    display: none;
-}
-
-/* Общий стиль секций */
-.account-section {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Активная секция */
-.account-section.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Анимация исчезновения */
-.account-section.fade-out {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-/* Анимация появления */
-.account-section.fade-in {
-    display: block;
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-
-
-
 #user-avatar {
     border-radius: 50%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .username {
     display: flex;
     justify-content: center;
     font-size: 20px;
 }
-
-
 
 .avatar-container {
     position: relative;
@@ -1424,8 +1289,6 @@ body, header, section, footer {
     opacity: 1;
 }
 
-
-
 #cropperModal {
     position: fixed;
     top: 50%;
@@ -1440,6 +1303,7 @@ body, header, section, footer {
 #cropperImage {
     max-width: 100%;
 }
+
 #cropButton {
     width: 100px;
     height: 35px;
@@ -1456,6 +1320,7 @@ body, header, section, footer {
 
     margin-top: 20px;
 }
+
 #cropButton:hover {
     background-color: #c48c7b;
 }

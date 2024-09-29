@@ -5,7 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Account from './pages/Account';
-import Projects from './pages/Projects'
+import Projects from './pages/Projects';
 
 const App = () => {
   return (

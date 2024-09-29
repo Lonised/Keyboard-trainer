@@ -9,7 +9,7 @@ import twitterImg from '../assets/img/twitter.png';
 import instagramImg from '../assets/img/instagram.png';
 import meImg from '../assets/img/Me.jpg';
 import cvPdf from '../assets/CV_EN.pdf';
-
+import meNow from '../assets/img/2024.jpg';
 
 
 const About = () => {
@@ -81,7 +81,7 @@ const About = () => {
           <section className={styles['wrapper-logo']}>
               <div className={styles.logoUp}>
                   <h1>Daniil Dmitrievich Shterkel</h1>
-                  <img src="/src/assets/img/Me.jpg" alt="Me" />
+                  <img src="/src/assets/img/2024.jpg" alt="Me" />
               </div>
           </section>
 

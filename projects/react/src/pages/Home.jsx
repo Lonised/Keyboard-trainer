@@ -16,6 +16,7 @@ import post2 from '../assets/img/wrapper-posts(2).png';
 import post3 from '../assets/img/wrapper-posts(3).png';
 import wallpaperImg from '../assets/img/wallpaper.png';
 import likeImg from '../assets/img/like.png';
+import meNow from '../assets/img/2024.jpg';
 
 const Home = () => {
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
@@ -137,7 +138,7 @@ const Home = () => {
       <section className={styles['wrapper-about']}>
         <div className={styles.about}>
           <div className={styles.aboutLeft}>
-            <img src={meImg} alt="Me" />
+            <img src={meNow} alt="meNow" />
           </div>
           <div className={styles.aboutRight}>
             <div className={styles['aboutRight-name']}>

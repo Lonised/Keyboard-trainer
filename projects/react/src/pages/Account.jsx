@@ -4,12 +4,12 @@ import profileImg from '../assets/img/profile.png';
 import menuImg from '../assets/img/menu.png';
 import cameraImg from '../assets/img/photo-camera.png';
 import downArrowImg from '../assets/img/downArrow.png';
-import inImg from '../assets/img/in.png';
+{/*import inImg from '../assets/img/in.png';
 import gitImg from '../assets/img/git.png';
 import twitterImg from '../assets/img/twitter.png';
 import instagramImg from '../assets/img/instagram.png';
 import pdfImg from '../assets/img/pdf.png';
-import starImg from '../assets/img/star.png';
+import starImg from '../assets/img/star.png';*/}
 
 const Account = () => {
     const [isHeaderHidden, setIsHeaderHidden] = useState(false);
@@ -56,72 +56,85 @@ const Account = () => {
 
     return (
         <div>
-            <header className={styles['wrapper-header']}>
-                <div className={styles['header']}>
-                    <div className={styles['header-left']}>
-                        <h1>Daniil Dmitrievich Shterkel</h1>
-                    </div>
+            <header className={`${styles['wrapper-header']} ${isHeaderHidden ? styles.hidden : ''}`}>
+                <div className={styles.header}>
+                <div className={styles.headerLeft}>
+                    <h1>Daniil Dmitrievich Shterkel</h1>
+                </div>
 
-                    <div className={styles['header-right']}>
-                        <a href="#"><img src={menuImg} className={styles['header-right-img']} id="burger-menu" alt="Menu"/></a>
-                        <div className={styles['header-right-a']}>
-                            <a href="/public/index.html" className={styles['header-right-href-active']}>Home</a>
-                            <a href="/src/pages/About/about.html" className={styles['header-right-href']}>About</a>
-                            <a href="/src/pages/Projects/projects.html" className={styles['header-right-href']}>Projects</a>
-                            <a href="/src/pages/Media/media.html" className={styles['header-right-href']}>Media</a>
-                            <a href="/src/pages/Blog/blog.html" className={styles['header-right-href']}>Blog</a>
-                            <a href="/src/pages/Contact/contact.html" className={styles['header-right-href']}>Contact</a>
-                        </div>
-                    </div>
-
-                    <div className={styles['sidebar']} id="sidebar">
-                        <div className={styles['sidebar-login']}>
-                            <a href="#"><img src={profileImg} alt="Profile"/><p>Log In</p></a>
-                        </div>
-                        <div className={styles['sidebar-line']}></div>
-                        <a href="#" onClick={toggleSidebar} className={styles['closebtn']} id="closeSidebar">&times;</a>
-                        <a href="/public/index.html" className={styles['sidebar-href-active']}>Home</a>
-                        <a href="/src/pages/About/about.html" className={styles['sidebar-href']}>About</a>
-                        <a href="/src/pages/Projects/projects.html" className={styles['sidebar-href']}>Projects</a>
-                        <a href="/src/pages/Media/media.html" className={styles['sidebar-href']}>Media</a>
-                        <a href="/src/pages/Blog/blog.html" className={styles['sidebar-href']}>Blog</a>
-                        <a href="/src/pages/Contact/contact.html" className={styles['sidebar-href']}>Contact</a>
+                <div className={styles.headerRight}>
+                    <a href="#" onClick={toggleSidebar}>
+                    <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
+                    </a>
+                    <div className={styles.headerRightA}>
+                    <a href="/" className={styles['headerRight-href-active']}>Home</a>
+                    <a href="/about" className={styles['headerRight-href']}>About</a>
+                    <a href="/projects" className={styles['headerRight-href']}>Projects</a>
+                    <a href="/media" className={styles['headerRight-href']}>Media</a>
+                    <a href="/blog" className={styles['headerRight-href']}>Blog</a>
+                    <a href="/contact" className={styles['headerRight-href']}>Contact</a>
                     </div>
                 </div>
-                <div className={styles['header-line']}></div>
-                <nav className={styles['wrapper-nav']}>
-                    <div className={styles['nav-left']}>
-                        <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
-                    </div>
-                    <div className={styles['nav-right']}>
-                        <a id="profile-link" href="/src/pages/Login/login.html">
-                            <img id="user-avatar" src={profileImg} alt="User Avatar"/>
-                        </a>
-                        <a href="#" id="user-link">
-                            <p id="user-name">Log In</p>
-                        </a>
-                        <a href="#" id="sidebarToggleBtn"><img src={downArrowImg} alt="Down Arrow"/></a>
-                    </div>
 
-                    <div id="secondarySidebar" className={styles['secondary-sidebar']}>
-                        <a href="#">Profile</a>
-                        <a href="#">My Orders</a>
-                        <a href="#">My Wallet</a>
-                        <a href="#">My Drafts</a>
-                        <a href="#">My addresses</a>
-                        <a href="#">My account</a>
-                        <hr />
-                        <a href="#" id="logoutBtn">Log Out</a>
+                {/* Sidebar */}
+                <div className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : ''}`} id="sidebar">
+                    <div className={styles.sidebarLogin}>
+                    <a href="#"><img src={profileImg} alt="Profile" />
+                        <p>Log In</p>
+                    </a>
                     </div>
+                    <div className={styles.sidebarLine}></div>
+                    <a href="#" onClick={toggleSidebar} className={styles.closebtn} id="closeSidebar">&times;</a>
+                    <a href="/" className={styles['sidebar-href-active']}>Home</a>
+                    <a href="/about" className={styles['sidebar-href']}>About</a>
+                    <a href="/projects" className={styles['sidebar-href']}>Projects</a>
+                    <a href="/media" className={styles['sidebar-href']}>Media</a>
+                    <a href="/blog" className={styles['sidebar-href']}>Blog</a>
+                    <a href="/contact" className={styles['sidebar-href']}>Contact</a>
+                </div>
+                </div>
+
+                <div className={styles.headerLine}></div>
+
+                {/* Secondary Sidebar */}
+                <nav className={styles['wrapper-nav']}>
+                <div className={styles.navLeft}>
+                    <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
+                </div>
+                <div className={styles.navRight}>
+                    <a id="profile-link" href="/login">
+                    <img id="user-avatar" src={profileImg} alt="User Avatar" />
+                    </a>
+                    <a href="/login">
+                    <p id="user-name">Log In</p>
+                    </a>
+                    <a href="#" id="sidebarToggleBtn" onClick={toggleSecondarySidebar}>
+                    <img src={downArrowImg} alt="Toggle Sidebar" />
+                    </a>
+                </div>
+
+                {/* Secondary Sidebar */}
+                <div id="secondarySidebar" className={`${styles['secondary-sidebar']} ${isSecondarySidebarVisible ? styles.visible : ''}`}>
+                    <a href="/account" id="profileLink">Profile</a>
+                    <a href="/account" id="ordersLink">My Orders</a>
+                    <a href="/account" id="walletLink">Files</a>
+                    <a href="/account" id="draftsLink">My Account</a>
+                    <a href="/account" id="addressesLink">Notifications</a>
+                    <a href="/account" id="accountLink">Settings</a>
+                    <hr />
+                    <a href="#" id="logoutBtn">Log Out</a>
+                </div>
                 </nav>
             </header>
+
+            <div className={styles.overlay} id="overlay"></div>
 
             <section className={styles['wrapper-account']}>
                 <div className={styles['account']}>
                     <div className={styles['account-navigation']}>
-                        <div className={styles['account-nav-name']}>
-                            <a href="#"><img src={menuImg} className={styles['nav-name-img']} id="NavNameBtn" alt="Menu"/></a>
-                            <div className={styles['avatar-container']} id="avatarContainer">
+                        <div className={styles['accountNavName']}>
+                            <a href="#"><img src={menuImg} className={styles['NavNameImg']} id="NavNameBtn" alt="Menu"/></a>
+                            <div className={styles['avatar-container']} id="avatar-container">
                                 <img id="NavAvatar" src={profileImg} alt="User Avatar" className={styles['avatar']}/>
                                 <div className={styles['camera-icon']}>
                                     <img src={cameraImg} alt="Change Avatar"/>
@@ -132,18 +145,18 @@ const Account = () => {
                             <div id="thirdSidebar" className={styles['third-sidebar']}>
                                 <a href="#" id="shareProfile">Share profile</a>
                                 <a href="#">Edit profile</a>
-                                <div className={styles['third-sidebar-line']}></div>
+                                <div className={styles['thirdSidebar-line']}></div>
                                 <a href="#">Add badges</a>
                             </div>
                             <h1 id="userName">User</h1>
                             <p>Admin</p>
-                            <div className={styles['nav-name-sub']}>
-                                <div className={styles['name-sub-left']}>
+                            <div className={styles['NavNameSub']}>
+                                <div className={styles['NameSubLeft']}>
                                     <p>0</p>
                                     <h2>followers</h2>
                                 </div>
-                                <div className={styles['nav-name-line']}></div>
-                                <div className={styles['name-sub-right']}>
+                                <div className={styles['NavNameLine']}></div>
+                                <div className={styles['NameSubRight']}>
                                     <p>0</p>
                                     <h2>following</h2>
                                 </div>
@@ -157,7 +170,7 @@ const Account = () => {
                             </div>
                         </div>
 
-                        <div className={styles['account-nav-button']}>
+                        <div className={styles['accountNavButton']}>
                             <a href="#" data-section="profile">Profile</a>
                             <a href="#" data-section="my-orders">My Orders</a>
                             <a href="#" data-section="files">Files</a>
@@ -170,28 +183,28 @@ const Account = () => {
 
                     <div className={`${styles['account-action']} ${styles['account-section']}`} id="profile">
                         <div className={styles['action']}>
-                            <div className={styles['action-up']}>
-                                <div className={styles['action-up-left']}>
+                            <div className={styles['actionUp']}>
+                                <div className={styles['actionUpLeft']}>
                                     <h3>Profile</h3>
                                     <p>Registration date: July 16, 2024</p>
                                 </div>
-                                <div className={styles['action-up-right']}>
+                                <div className={styles['actionUpRight']}>
                                     <a href="#">Edit profile</a>
                                 </div>
                             </div>
-                            <div className={styles['action-line']}></div>
-                            <div className={styles['action-middle']}>
+                            <div className={styles['actionLine']}></div>
+                            <div className={styles['actionMiddle']}>
                                 <p>About me</p>
                                 <button>Tell us about yourself</button>
                             </div>
-                            <div className={styles['action-down']}>
-                                <div className={styles['action-down-button']}>
+                            <div className={styles['actionDown']}>
+                                <div className={styles['actionDownButton']}>
                                     <p>Posts</p>
                                     <a href="#">Create a post</a>
                                 </div>
-                                <div className={styles['action-line']}></div>
-                                <div className={styles['action-down-posts']}>
-                                    <div className={styles['down-posts-buttons']}>
+                                <div className={styles['actionLine']}></div>
+                                <div className={styles['actionDownPosts']}>
+                                    <div className={styles['downPostsButtons']}>
                                         <h4>You haven't written anything yet</h4>
                                         <button>Create your first post</button>
                                     </div>

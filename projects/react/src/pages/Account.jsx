@@ -1,129 +1,81 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from '../assets/css/Account.module.css';
 import profileImg from '../assets/img/profile.png';
 import menuImg from '../assets/img/menu.png';
 import cameraImg from '../assets/img/photo-camera.png';
 import downArrowImg from '../assets/img/downArrow.png';
-{/*import inImg from '../assets/img/in.png';
-import gitImg from '../assets/img/git.png';
-import twitterImg from '../assets/img/twitter.png';
-import instagramImg from '../assets/img/instagram.png';
-import pdfImg from '../assets/img/pdf.png';
-import starImg from '../assets/img/star.png';*/}
+
+import pdfExample from '../assets/img/pdf.png';
+import star from '../assets/img/star.png';
 
 const Account = () => {
-    const [isHeaderHidden, setIsHeaderHidden] = useState(false);
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-    const [isSecondarySidebarVisible, setIsSecondarySidebarVisible] = useState(false);
-
-    // Функция для управления показом основного sidebar
-    const toggleSidebar = () => {
-      setIsSidebarVisible(!isSidebarVisible);
-    };
-
-    // Функция для управления показом вторичного sidebar
-    const toggleSecondarySidebar = () => {
-      setIsSecondarySidebarVisible(!isSecondarySidebarVisible);
-    };
-
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 200) {
-          setIsHeaderHidden(true);
-        } else {
-          setIsHeaderHidden(false);
-        }
-      };
-
-      const handleClickOutside = (event) => {
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar && !sidebar.contains(event.target)) {
-          setIsSidebarVisible(false);
-        }
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      if (isSidebarVisible) {
-        document.addEventListener('click', handleClickOutside);
-      }
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }, [isSidebarVisible]);
-
     return (
         <div>
-            <header className={`${styles['wrapper-header']} ${isHeaderHidden ? styles.hidden : ''}`}>
+            <header className={styles['wrapper-header']}>
                 <div className={styles.header}>
-                <div className={styles.headerLeft}>
-                    <h1>Daniil Dmitrievich Shterkel</h1>
-                </div>
-
-                <div className={styles.headerRight}>
-                    <a href="#" onClick={toggleSidebar}>
-                    <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
-                    </a>
-                    <div className={styles.headerRightA}>
-                    <a href="/" className={styles['headerRight-href-active']}>Home</a>
-                    <a href="/about" className={styles['headerRight-href']}>About</a>
-                    <a href="/projects" className={styles['headerRight-href']}>Projects</a>
-                    <a href="/media" className={styles['headerRight-href']}>Media</a>
-                    <a href="/blog" className={styles['headerRight-href']}>Blog</a>
-                    <a href="/contact" className={styles['headerRight-href']}>Contact</a>
+                    <div className={styles.headerLeft}>
+                        <h1>Daniil Dmitrievich Shterkel</h1>
                     </div>
-                </div>
 
-                {/* Sidebar */}
-                <div className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : ''}`} id="sidebar">
-                    <div className={styles.sidebarLogin}>
-                    <a href="#"><img src={profileImg} alt="Profile" />
-                        <p>Log In</p>
-                    </a>
+                    <div className={styles.headerRight}>
+                        <a href="#">
+                            <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
+                        </a>
+                        <div className={styles.headerRightA}>
+                            <a href="/" className={styles['headerRight-href-active']}>Home</a>
+                            <a href="/about" className={styles['headerRight-href']}>About</a>
+                            <a href="/projects" className={styles['headerRight-href']}>Projects</a>
+                            <a href="/media" className={styles['headerRight-href']}>Media</a>
+                            <a href="/blog" className={styles['headerRight-href']}>Blog</a>
+                            <a href="/contact" className={styles['headerRight-href']}>Contact</a>
+                        </div>
                     </div>
-                    <div className={styles.sidebarLine}></div>
-                    <a href="#" onClick={toggleSidebar} className={styles.closebtn} id="closeSidebar">&times;</a>
-                    <a href="/" className={styles['sidebar-href-active']}>Home</a>
-                    <a href="/about" className={styles['sidebar-href']}>About</a>
-                    <a href="/projects" className={styles['sidebar-href']}>Projects</a>
-                    <a href="/media" className={styles['sidebar-href']}>Media</a>
-                    <a href="/blog" className={styles['sidebar-href']}>Blog</a>
-                    <a href="/contact" className={styles['sidebar-href']}>Contact</a>
-                </div>
+
+                    <div className={styles.sidebar} id="sidebar">
+                        <div className={styles.sidebarLogin}>
+                            <a href="#">
+                                <img src={profileImg} alt="Profile" />
+                                <p>Log In</p>
+                            </a>
+                        </div>
+                        <div className={styles.sidebarLine}></div>
+                        <a href="/" className={styles['sidebar-href-active']}>Home</a>
+                        <a href="/about" className={styles['sidebar-href']}>About</a>
+                        <a href="/projects" className={styles['sidebar-href']}>Projects</a>
+                        <a href="/media" className={styles['sidebar-href']}>Media</a>
+                        <a href="/blog" className={styles['sidebar-href']}>Blog</a>
+                        <a href="/contact" className={styles['sidebar-href']}>Contact</a>
+                    </div>
                 </div>
 
                 <div className={styles.headerLine}></div>
 
-                {/* Secondary Sidebar */}
                 <nav className={styles['wrapper-nav']}>
-                <div className={styles.navLeft}>
-                    <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
-                </div>
-                <div className={styles.navRight}>
-                    <a id="profile-link" href="/login">
-                    <img id="user-avatar" src={profileImg} alt="User Avatar" />
-                    </a>
-                    <a href="/login">
-                    <p id="user-name">Log In</p>
-                    </a>
-                    <a href="#" id="sidebarToggleBtn" onClick={toggleSecondarySidebar}>
-                    <img src={downArrowImg} alt="Toggle Sidebar" />
-                    </a>
-                </div>
+                    <div className={styles.navLeft}>
+                        <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
+                    </div>
+                    <div className={styles.navRight}>
+                        <a id="profile-link" href="/login">
+                            <img id="user-avatar" src={profileImg} alt="User Avatar" />
+                        </a>
+                        <a href="/login">
+                            <p id="user-name">Log In</p>
+                        </a>
+                        <a href="#" id="sidebarToggleBtn">
+                            <img src={downArrowImg} alt="Toggle Sidebar" />
+                        </a>
+                    </div>
 
-                {/* Secondary Sidebar */}
-                <div id="secondarySidebar" className={`${styles['secondary-sidebar']} ${isSecondarySidebarVisible ? styles.visible : ''}`}>
-                    <a href="/account" id="profileLink">Profile</a>
-                    <a href="/account" id="ordersLink">My Orders</a>
-                    <a href="/account" id="walletLink">Files</a>
-                    <a href="/account" id="draftsLink">My Account</a>
-                    <a href="/account" id="addressesLink">Notifications</a>
-                    <a href="/account" id="accountLink">Settings</a>
-                    <hr />
-                    <a href="#" id="logoutBtn">Log Out</a>
-                </div>
+                    <div id="secondarySidebar" className={styles['secondary-sidebar']}>
+                        <a href="/account" id="profileLink">Profile</a>
+                        <a href="/account" id="ordersLink">My Orders</a>
+                        <a href="/account" id="walletLink">Files</a>
+                        <a href="/account" id="draftsLink">My Account</a>
+                        <a href="/account" id="addressesLink">Notifications</a>
+                        <a href="/account" id="accountLink">Settings</a>
+                        <hr />
+                        <a href="#" id="logoutBtn">Log Out</a>
+                    </div>
                 </nav>
             </header>
 
@@ -181,7 +133,8 @@ const Account = () => {
                         </div>
                     </div>
 
-                    <div className={`${styles['account-action']} ${styles['account-section']}`} id="profile">
+                    {/*С ДИСПЛЕЕМ NONE*/}
+                    <div className={`${styles['account-action']} ${styles['account-section']}`} id="profile" style={{display: 'none'}}>
                         <div className={styles['action']}>
                             <div className={styles['actionUp']}>
                                 <div className={styles['actionUpLeft']}>
@@ -211,6 +164,131 @@ const Account = () => {
                                 </div>
                                 <div className={styles['action-line']}></div>
                             </div>
+                        </div>
+                    </div>
+                    <div className={`${styles['account-MyOrders']} ${styles['account-section']}`} id="my-orders" style={{display: 'none'}}>
+                        <div className={styles["MyOrders"]}>
+                            <h3>My orders</h3>
+                            <p>View your order history and check the status of recent orders</p>
+                            <div className = {styles['actionLine']}></div>
+                            <div className={styles['MyOrdersFunction']}>
+                                <h4>You haven't orderes anything yet.</h4>
+                                <a href="#">Look</a>
+                            </div>      
+                            <div className={`${styles['actionLine']}`}></div>
+                        </div>
+                    </div>
+
+                    <div className={`${styles['account-files']} ${styles['account-section']}`} id="files" style={{display: 'none'}}>
+                        <div className={`${styles['files']}`}>
+                            <div className={`${styles['filesUp']}`}>
+                                <h3>Files and folders</h3>
+                                <p>Below are the files uploaded by the user.</p>
+                            </div>
+                            <div className={`${styles['filesMiddle']}`}>
+                                <a href="#">Downloads</a>
+                                <a href="#">Favorites</a>
+                            </div>
+                            <div className={`${styles['filesLine']}`}></div>
+                            <div className={`${styles['filesDown']}`}>
+                                <div className={`${styles['filesDownButton']}`}>
+                                    <p>Item name</p>
+                                    <a href="#">Update</a>
+                                </div>
+                                <div className={`${styles['filesLine']}`}></div>
+                                <div className={`${styles['filesDownFunction']}`}>
+                                    <div className={`${styles['filesFunctionExample']}`}>
+                                        <div className={`${styles['filesFunctionName']}`}>
+                                            <img src={pdfExample} alt="#"/>
+                                            <div className={`${styles[`filesFunctionNameDop`]}`}>
+                                                <a href="#">File name</a>
+                                                <p>4.15 MB</p>
+                                            </div>
+                                        </div>
+                                        <div className={`${styles['fileFunctionInfo']}`}>
+                                            <p className={`${styles['fileFunctionTime']}`}>15 july 2024</p>
+                                            <img src={star} alt="#" />
+                                            <img src={menuImg} alt="#" />
+                                        </div>
+                                    </div>
+                                    <div className={`${styles['filesLine']}`}></div>
+                                    <div className={`${styles['filesFunctionExample']}`}>
+                                        <div className={`${styles['filesFunctionName']}`}>
+                                            <img src={pdfExample} alt="#"/>
+                                            <div className={`${styles[`filesFunctionNameDop`]}`}>
+                                                <a href="#">File name</a>
+                                                <p>4.15 MB</p>
+                                            </div>
+                                        </div>
+                                        <div className={`${styles['fileFunctionInfo']}`}>
+                                            <p className={`${styles['fileFunctionTime']}`}>15 july 2024</p>
+                                            <img src={star} alt="#" />
+                                            <img src={menuImg} alt="#" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`${styles['filesLine']}`}></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={`${styles['account-my']} ${styles['account-section']}`} id="my-acconunt">
+                        <div className={`${styles['myAccount']}`}>
+                            <div className={`${styles['myAccountUp']}`}>
+                                <div className={`${styles['myAccountUpLeft']}`}>
+                                    <h1>Account</h1>
+                                    <p>View and edit information about yourself</p>    
+                                </div>    
+                                <div className={`${styles['myAccountUpRight']}`}>
+                                    <button className={`${styles['myAccountReset']}`}>Reset</button>
+                                    <button className={`${styles['myAccountUpdate']}`}>Update</button>
+                                </div>
+                            </div>
+                            <div className={`${styles['actionLine']}`}></div>
+                            <div className={`${styles['myAccountLogin']}`}>
+                                <h2>Basic information</h2>
+                                <p>This information will be visible to all site users</p>
+                                <div className={`${styles['myAccountLoginInput']}`}>
+                                    <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <p>Display name *</p>
+                                        <input type="text" />
+                                    </div>
+                                    <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <p>Name</p>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                                <div className={`${styles['actionLine']}`}></div>
+                                <h2>Personal data</h2>
+                                <p>Update your personal information</p>
+                                <div className={`${styles['myAccountLoginInfo']}`}>
+                                    <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <p>First Name</p>
+                                        <input type="text" />
+                                    </div>
+                                    <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <p>Last Name</p>
+                                        <input type="text" />
+                                    </div>
+                                    <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <p>Phone</p>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                                <div className={`${styles['myAccountLoginButton']}`}>
+                                    <button className={`${styles['myAccountReset']}`}>Reset</button>
+                                    <button className={`${styles['myAccountUpdate']}`}>Update</button>
+                                </div>
+                            </div>
+                            <div className={`${styles['actionLine']}`}></div>
+                            <div className={`${styles['myAccountDown']}`}>
+                            <   h2>Account login information</h2>
+                                <p>View and update your login email and password</p>
+                                <h2>Email for login:</h2>
+                                <p>daniilshterkel05@gmail.com</p>
+                                <h2>Password:</h2>
+                                <p>******</p>
+                            </div>  
                         </div>
                     </div>
                 </div>

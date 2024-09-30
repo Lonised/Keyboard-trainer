@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from '../assets/css/Home.module.css';
 import menuImg from '../assets/img/menu.png';
 import profileImg from '../assets/img/profile.png';
@@ -19,57 +19,16 @@ import likeImg from '../assets/img/like.png';
 import meNow from '../assets/img/2024.jpg';
 
 const Home = () => {
-  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  const [isSecondarySidebarVisible, setIsSecondarySidebarVisible] = useState(false);
-
-  // Функция для управления показом основного sidebar
-  const toggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
-  };
-
-  // Функция для управления показом вторичного sidebar
-  const toggleSecondarySidebar = () => {
-    setIsSecondarySidebarVisible(!isSecondarySidebarVisible);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setIsHeaderHidden(true);
-      } else {
-        setIsHeaderHidden(false);
-      }
-    };
-
-    const handleClickOutside = (event) => {
-      const sidebar = document.getElementById('sidebar');
-      if (sidebar && !sidebar.contains(event.target)) {
-        setIsSidebarVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    if (isSidebarVisible) {
-      document.addEventListener('click', handleClickOutside);
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isSidebarVisible]);
   return (
     <div>
-      <header className={`${styles['wrapper-header']} ${isHeaderHidden ? styles.hidden : ''}`}>
+      <header className={`${styles['wrapper-header']}`}>
         <div className={styles.header}>
           <div className={styles.headerLeft}>
             <h1>Daniil Dmitrievich Shterkel</h1>
           </div>
 
           <div className={styles.headerRight}>
-            <a href="#" onClick={toggleSidebar}>
+            <a href="#">
               <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
             </a>
             <div className={styles.headerRightA}>
@@ -83,14 +42,13 @@ const Home = () => {
           </div>
 
           {/* Sidebar */}
-          <div className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : ''}`} id="sidebar">
+          <div className={`${styles.sidebar}`} id="sidebar">
             <div className={styles.sidebarLogin}>
               <a href="#"><img src={profileImg} alt="Profile" />
                 <p>Log In</p>
               </a>
             </div>
             <div className={styles.sidebarLine}></div>
-            <a href="#" onClick={toggleSidebar} className={styles.closebtn} id="closeSidebar">&times;</a>
             <a href="/" className={styles['sidebar-href-active']}>Home</a>
             <a href="/about" className={styles['sidebar-href']}>About</a>
             <a href="/projects" className={styles['sidebar-href']}>Projects</a>
@@ -114,13 +72,13 @@ const Home = () => {
             <a href="/login">
               <p id="user-name">Log In</p>
             </a>
-            <a href="#" id="sidebarToggleBtn" onClick={toggleSecondarySidebar}>
+            <a href="#">
               <img src={downArrowImg} alt="Toggle Sidebar" />
             </a>
           </div>
 
           {/* Secondary Sidebar */}
-          <div id="secondarySidebar" className={`${styles['secondary-sidebar']} ${isSecondarySidebarVisible ? styles.visible : ''}`}>
+          <div id="secondarySidebar" className={`${styles['secondary-sidebar']}`}>
             <a href="/account" id="profileLink">Profile</a>
             <a href="/account" id="ordersLink">My Orders</a>
             <a href="/account" id="walletLink">Files</a>

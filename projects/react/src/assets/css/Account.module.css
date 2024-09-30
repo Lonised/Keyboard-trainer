@@ -22,6 +22,42 @@ body, header, section, footer {
     display: flex;
 }   
 
+/*АНИМАЦИЯ ДЛЯ СЕКЦИЯМИ*/
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+.slide-in {
+    animation: slideInDown 0.5s ease forwards;
+}
+
+.slide-out {
+    animation: slideOutUp 0.5s ease forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+
 .wrapper-header {
     width: 100%;
     height: 120px;
@@ -354,7 +390,7 @@ body, header, section, footer {
 
 .wrapper-account {
     width: 100%;
-    height: 950px;
+    height: 1050px;
     margin-top: 115px;
 
     display: flex;
@@ -523,8 +559,6 @@ body, header, section, footer {
     font-style: normal;
     font-size: 13px;
 }
-
-
 
 .accountNavButton {
     width: 250px;
@@ -917,6 +951,10 @@ body, header, section, footer {
     flex-direction: column;
     gap: 10px;
 }
+.myAccountUpRight {
+    display: flex;
+    gap: 5px;
+}
 .myAccountUpRight button {
     width: 85px;
     height: 30px;
@@ -1213,6 +1251,7 @@ body, header, section, footer {
     visibility:visible;
     opacity:1;
 }
+
 
 .wrapper-end {
     width: 100%;

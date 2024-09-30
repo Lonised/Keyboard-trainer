@@ -11,12 +11,11 @@ import meImg from '../assets/img/Me.jpg';
 import wrapperPhoto1 from '../assets/img/wrapper-photo(1).png';
 import wrapperPhoto2 from '../assets/img/wrapper-photo(2).png';
 import wrapperPhoto3 from '../assets/img/wrapper-photo(3).png';
-import post1 from '../assets/img/wrapper-posts(1).png';
-import post2 from '../assets/img/wrapper-posts(2).png';
-import post3 from '../assets/img/wrapper-posts(3).png';
+import postExample from '../assets/img/postExample.jpg';
 import wallpaperImg from '../assets/img/wallpaper.png';
 import likeImg from '../assets/img/like.png';
 import meNow from '../assets/img/2024.jpg';
+import message from '../assets/img/message.png'
 
 const Home = () => {
   return (
@@ -137,40 +136,21 @@ const Home = () => {
         </div>
         <div className={styles.postsDown}>
           <div className={styles.posts}>
-            <img src={post1} alt="Post 1" />
+            <img src={postExample} alt="Post" />
             <div className={styles.postsInfo}>
               <div className={styles['postsInfo-name']}>
                 <a href="#">I am learning and practicing frontend development.</a>
               </div>
-              <div className={styles.headerLine}></div>
+              <div className={styles['headerLine-posts']}></div>
               <div className={styles['postsInfo-href']}>
-                <a href="#"><img src={likeImg} alt="Like" /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.posts}>
-            <img src={post2} alt="Post 2" />
-            <div className={styles.postsInfo}>
-              <div className={styles['postsInfo-name']}>
-                <a href="#">Knowledge of JavaScript is the power of a skilled developer.</a>
-              </div>
-              <div className={styles.headerLine}></div>
-              <div className={styles['postsInfo-href']}>
-                <a href="#"><img src={likeImg} alt="Like" /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.posts}>
-            <img src={post3} alt="Post 3" />
-            <div className={styles.postsInfo}>
-              <div className={styles['postsInfo-name']}>
-                <a href="#">Windows vs macOS: war between operating systems again?</a>
-              </div>
-              <div className={styles.headerLine}></div>
-              <div className={styles['postsInfo-href']}>
-                <a href="#"><img src={likeImg} alt="Like" /></a>
+                <div className={styles['postsInfo-hrefA']}>
+                  <a href="#"><img src={message} alt="Message" /></a>
+                  <p>1</p>
+                </div>
+                <div className={styles['postsInfo-hrefA']}>
+                  <p>2</p>
+                  <a href="#"><img src={likeImg} alt="Like" /></a>
+                </div>
               </div>
             </div>
           </div>

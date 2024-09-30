@@ -280,7 +280,7 @@ body, header, section, footer {
 .headerLine {
     width: 90%;
     height: 1px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .wrapper-nav {
@@ -600,72 +600,82 @@ body, header, section, footer {
 
 .posts {
     width: 300px;
-    height: 350px;
+    height: 300px;
     background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
 }
 
 .posts:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .posts img {
     width: 300px;
-    height: 175px;
+    height: 160px;
+    object-fit: cover;
 
 }
 
 .postsInfo {
+    width: 300px;
+    height: 140px;
     padding: 20px;
+    padding-top: 25px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.postsInfo-name {
-    width: 260px;
-    padding-bottom: 10px;
-}
+
 
 .postsInfo-name a {
-    font-family: "Baskervville SC", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: black;
-    text-decoration: none;
-
-    font-size: 20px;
-    transition: 0.1s ease;
-}
-
-.postsInfo-name a:hover {
-    color: #BE6D54;
-}
-
-.postsInfo-href {
-    padding-top: 10px;
-    display: flex;
-    justify-content: end;
-    gap: 5px;
-}
-
-.postsInfo-href p {
     font-family: "Baskervville SC", serif;
     font-weight: 500;
     font-style: normal;
     color: black;
     text-decoration: none;
 
-    font-size: 16px;
+    font-size: 19px;
     transition: 0.1s ease;
 }
 
-.postsInfo-href img {
+
+.postsInfo-href {
+    display: flex;
+    justify-content: space-between;
+}
+
+.postsInfo-hrefA {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 19px;
+}.postsInfo-hrefA p {
+    font-family: "Baskervville SC", serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.postsInfo-hrefA a {
+    height: 15px;
+}
+.postsInfo-hrefA img {
     width: 15px;
     height: auto;
     object-fit: cover;
 }
- 
+
+.headerLine-posts {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(210, 210, 210);
+}
 
 
 /*_________________ _________________ _________________ _________________ _________________ */
@@ -843,247 +853,3 @@ body, header, section, footer {
     color: #BAC7C1;
 }
 
-
-/*____________ ___________ ____________ ____________ _____________*/
-/*WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD WRAPPER-IPAD*/
-/*____________ ___________ ____________ ____________ _____________*/
-
-
-
-@media screen and (min-width: 426px) and (max-width: 1024px) {
-    .headerRightA {
-        gap: 20px;
-    }
-
-    .about {
-        width: 85%;
-    }
-
-    .aboutRight-name {
-        width: 400px;
-        top: 270px;
-        left: 45%;
-    }
-
-    .aboutRight-info {
-        width: 300px;
-        margin-top: 15px;
-    }
-
-    .wrapper-photo img {
-        height: 400px;
-    }
-
-    .wrapper-posts {
-        align-items: center;
-    }
-
-    .postsDown {
-        width: 70%;
-        gap: 30px;
-    }
-
-    .posts {
-        width: 250px;
-    }
-
-    .posts img {
-        width: 250px;
-    }
-
-    .postsInfo {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .postsInfo-name {
-        width: 200px;
-    }
-
-    .postsInfo-name a {
-        font-size: 20px;
-    }
-
-    .postsInfo-href img {
-        width: 20px;
-    }
-    .faq {
-        width: 90%;
-        justify-content: space-between;
-    }
-}
-
-
-
-@media screen and (min-width: 319px) and (max-width: 375px) {
-    body {
-        max-width: 375px;
-    }
-
-    .wrapper-header {
-        max-width: 375px;
-    }
-
-    .header {
-        max-width: 375px;
-        justify-content: space-between;
-    }
-
-    .headerLeft {
-        font-size: 10px;
-    }
-    
-    .headerRightA {
-        display: none;
-    }
-
-    .navRight {
-        display: none;
-    }
-
-    .headerRight-img {
-        display: flex;
-    }
-
-    .sidebar-active {
-        width: 300px;
-    }
-
-
-    .wrapper-about {
-        max-width: 375px;
-        height: 900px;
-    }
-
-    .about {
-        max-width: 375px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .aboutLeft {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .aboutLeft img {
-        width: 340px;
-        height: 440px;
-        object-fit: cover;
-        top: 350px;
-    }
-
-    .aboutRight {
-        padding: 0;
-    }
-
-    .aboutRight-name {
-        width: 375px;
-        text-align: center;
-        font-size: 40px;
-        left: -60px;
-        top: 280px;
-
-        line-height: 1.8cm;
-    }
-
-    .aboutRight-name h1 {
-        width: 375px;
-        padding-left: 120px;
-        text-align: center;
-    }
-
-    .aboutRight-info {
-        width: 340px;
-        top: 850px;
-        left: 20px;
-
-        font-size: 16px;
-        text-align: center;
-    }
-
-
-
-    .wrapper-photo {
-        max-width: 375px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wrapper-photo img {
-        width: 100%;
-        height: 400px;
-    }
-
-
-
-    .wrapper-projects {
-        max-width: 375px;
-    }
-
-    .projects {
-        text-align: center;
-    }
-
-    .wrapper-posts {
-        max-width: 375px;
-        height: 1750px;
-    }
-
-    .postsUp {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .postsUpLeft {
-        width: 300px;
-        text-align: center;
-    }
-
-    .postsUpRight {
-        width: 300px;
-        text-align: center;
-    }
-
-    .postsDown {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .wrapper-wallpaper {
-        margin-top: -100px;
-    }
-
-
-
-    .wrapper-faq {
-        max-width: 375px;
-        height: 100px;
-    
-    }
-    .faq {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .faqRight a span{
-        display: none;
-    }
-
-
-
-    .wrapper-end {
-        max-width: 375px;
-    }
-    .end {
-        text-align: center;
-        width: 300px;
-    }
-}

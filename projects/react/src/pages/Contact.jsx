@@ -1,12 +1,6 @@
 import React from 'react';
 import styles from '../assets/css/Contact.module.css';
-import menuIcon from '../assets/img/menu.png';
-import profileIcon from '../assets/img/profile.png';
-import downArrowIcon from '../assets/img/downArrow.png';
-import linkedinIcon from '../assets/img/in.png';
-import githubIcon from '../assets/img/git.png';
-import twitterIcon from '../assets/img/twitter.png';
-import instagramIcon from '../assets/img/instagram.png';
+import { images } from '../components/images'; 
 
 const Contact = () => {
   return (
@@ -18,7 +12,9 @@ const Contact = () => {
           </div>
 
           <div className={styles['headerRight']}>
-            <a href="#"><img src={menuIcon} className={styles['headerRight-img']} id="burger-menu" alt="Menu" /></a>
+            <a href="#">
+              <img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
+            </a>
             <div className={styles['headerRightA']}>
               <a href="/" className={styles['headerRight-href']}>Home</a>
               <a href="/about" className={styles['headerRight-href']}>About</a>
@@ -31,12 +27,13 @@ const Contact = () => {
 
           <div className={styles['sidebar']} id="sidebar">
             <div className={styles['sidebarLogin']}>
-              <a href="#"><img src={profileIcon} alt="Profile" />
+              <a href="#">
+                <img src={images.profileImg} alt="Profile" />
                 <p>Log In</p>
               </a>
             </div>
             <div className={styles['sidebarLine']}></div>
-            <a href="#" onClick={(e) => { e.preventDefault(); /* Your logic here */ }} className={styles.closebtn} id="closeSidebar">&times;</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); /* Ваша логика здесь */ }} className={styles.closebtn} id="closeSidebar">&times;</a>
             <a href="/" className={styles['sidebar-href-active']}>Home</a>
             <a href="/about" className={styles['sidebar-href']}>About</a>
             <a href="/projects" className={styles['sidebar-href']}>Projects</a>
@@ -52,12 +49,14 @@ const Contact = () => {
           </div>
           <div className={styles['navRight']}>
             <a href="/src/pages/Login/login.html">
-              <img src={profileIcon} alt="Profile" />
+              <img src={images.profileImg} alt="Profile" />
             </a>
             <a href="/src/pages/Login/login.html">
               <p id="user-name">Log In</p>
             </a>
-            <a href="#" id="sidebarToggleBtn"><img src={downArrowIcon} alt="Toggle Sidebar" /></a>
+            <a href="#" id="sidebarToggleBtn">
+              <img src={images.downArrowImg} alt="Toggle Sidebar" />
+            </a>
           </div>
 
           <div id="secondarySidebar" className={styles['secondary-sidebar']}>
@@ -86,10 +85,22 @@ const Contact = () => {
             <p>7-777-777-77-77</p>
           </div>
           <div className={styles['addressRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={linkedinIcon} alt="LinkedIn" /><span>Linkedin</span></a>
-            <a href="https://github.com/Lonised"><img src={githubIcon} alt="GitHub" /><span>GitHub</span></a>
-            <a href="https://x.com/lonised_"><img src={twitterIcon} alt="Twitter" /><span>Twitter</span></a>
-            <a href="https://www.instagram.com/lonised_/"><img src={instagramIcon} alt="Instagram" /><span>Instagram</span></a>
+            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
+              <img src={images.linkedinImg} alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Lonised">
+              <img src={images.githubImg} alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://x.com/lonised_">
+              <img src={images.twitterImg} alt="Twitter" />
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/lonised_/">
+              <img src={images.instagramImg} alt="Instagram" />
+              <span>Instagram</span>
+            </a>
           </div>
         </div>
       </section>
@@ -136,10 +147,22 @@ const Contact = () => {
             <a href="#">FAQ</a>
           </div>
           <div className={styles['faqRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={linkedinIcon} alt="LinkedIn" /><span>Linkedin</span></a>
-            <a href="https://github.com/Lonised"><img src={githubIcon} alt="GitHub" /><span>GitHub</span></a>
-            <a href="https://x.com/lonised_"><img src={twitterIcon} alt="Twitter" /><span>Twitter</span></a>
-            <a href="https://www.instagram.com/lonised_/"><img src={instagramIcon} alt="Instagram" /><span>Instagram</span></a>
+            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
+              <img src={images.linkedinImg} alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Lonised">
+              <img src={images.githubImg} alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://x.com/lonised_">
+              <img src={images.twitterImg} alt="Twitter" />
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/lonised_/">
+              <img src={images.instagramImg} alt="Instagram" />
+              <span>Instagram</span>
+            </a>
           </div>
         </div>
       </section>

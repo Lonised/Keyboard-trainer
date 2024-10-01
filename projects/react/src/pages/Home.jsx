@@ -1,21 +1,6 @@
 import React from 'react';
 import styles from '../assets/css/Home.module.css';
-import menuImg from '../assets/img/menu.png';
-import profileImg from '../assets/img/profile.png';
-import downArrowImg from '../assets/img/downArrow.png';
-import linkedinImg from '../assets/img/in.png';
-import githubImg from '../assets/img/git.png';
-import twitterImg from '../assets/img/twitter.png';
-import instagramImg from '../assets/img/instagram.png';
-import meImg from '../assets/img/Me.jpg';
-import wrapperPhoto1 from '../assets/img/wrapper-photo(1).png';
-import wrapperPhoto2 from '../assets/img/wrapper-photo(2).png';
-import wrapperPhoto3 from '../assets/img/wrapper-photo(3).png';
-import postExample from '../assets/img/postExample.jpg';
-import wallpaperImg from '../assets/img/wallpaper.png';
-import likeImg from '../assets/img/like.png';
-import meNow from '../assets/img/2024.jpg';
-import message from '../assets/img/message.png'
+import { images } from '../components/images';
 
 const Home = () => {
   return (
@@ -28,7 +13,7 @@ const Home = () => {
 
           <div className={styles.headerRight}>
             <a href="#">
-              <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
+              <img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
             </a>
             <div className={styles.headerRightA}>
               <a href="/" className={styles['headerRight-href-active']}>Home</a>
@@ -43,7 +28,7 @@ const Home = () => {
           {/* Sidebar */}
           <div className={`${styles.sidebar}`} id="sidebar">
             <div className={styles.sidebarLogin}>
-              <a href="#"><img src={profileImg} alt="Profile" />
+              <a href="#"><img src={images.profileImg} alt="Profile" />
                 <p>Log In</p>
               </a>
             </div>
@@ -66,13 +51,13 @@ const Home = () => {
           </div>
           <div className={styles.navRight}>
             <a id="profile-link" href="/login">
-              <img id="user-avatar" src={profileImg} alt="User Avatar" />
+              <img id="user-avatar" src={images.profileImg} alt="User Avatar" />
             </a>
             <a href="/login">
               <p id="user-name">Log In</p>
             </a>
             <a href="#">
-              <img src={downArrowImg} alt="Toggle Sidebar" />
+              <img src={images.downArrowImg} alt="Toggle Sidebar" />
             </a>
           </div>
 
@@ -95,7 +80,7 @@ const Home = () => {
       <section className={styles['wrapper-about']}>
         <div className={styles.about}>
           <div className={styles.aboutLeft}>
-            <img src={meNow} alt="meNow" />
+            <img src={images.meNow} alt="meNow" />
           </div>
           <div className={styles.aboutRight}>
             <div className={styles['aboutRight-name']}>
@@ -111,9 +96,9 @@ const Home = () => {
       </section>
 
       <section className={styles['wrapper-photo']}>
-        <img src={wrapperPhoto1} alt="Wrapper Photo 1" />
-        <img src={wrapperPhoto2} alt="Wrapper Photo 2" />
-        <img src={wrapperPhoto3} alt="Wrapper Photo 3" />
+        <img src={images.wrapperPhoto1} alt="Wrapper Photo 1" />
+        <img src={images.wrapperPhoto2} alt="Wrapper Photo 2" />
+        <img src={images.wrapperPhoto3} alt="Wrapper Photo 3" />
       </section>
 
       <section className={styles['wrapper-projects']}>
@@ -136,7 +121,7 @@ const Home = () => {
         </div>
         <div className={styles.postsDown}>
           <div className={styles.posts}>
-            <img src={postExample} alt="Post" />
+            <img src={images.postExample} alt="Post" />
             <div className={styles.postsInfo}>
               <div className={styles['postsInfo-name']}>
                 <a href="#">I am learning and practicing frontend development.</a>
@@ -144,12 +129,12 @@ const Home = () => {
               <div className={styles['headerLine-posts']}></div>
               <div className={styles['postsInfo-href']}>
                 <div className={styles['postsInfo-hrefA']}>
-                  <a href="#"><img src={message} alt="Message" /></a>
+                  <a href="#"><img src={images.message} alt="Message" /></a>
                   <p>1</p>
                 </div>
                 <div className={styles['postsInfo-hrefA']}>
                   <p>2</p>
-                  <a href="#"><img src={likeImg} alt="Like" /></a>
+                  <a href="#"><img src={images.likeImg} alt="Like" /></a>
                 </div>
               </div>
             </div>
@@ -159,7 +144,7 @@ const Home = () => {
 
       <section className={styles['wrapper-wallpaper']}>
         <div className={styles.wallpaper}>
-          <img src={wallpaperImg} alt="Wallpaper" />
+          <img src={images.wallpaperImg} alt="Wallpaper" />
         </div>
       </section>
 
@@ -173,25 +158,25 @@ const Home = () => {
           <div className={styles.faqRight}>
             <div className={styles.faqRightIcon}>
               <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/" target="_blank" rel="noopener noreferrer">
-                <img src={linkedinImg} alt="LinkedIn" />
+                <img src={images.linkedinImg} alt="LinkedIn" />
                 <span>LinkedIn</span>
               </a>
             </div>
             <div className={styles.faqRightIcon}>
               <a href="https://github.com/Lonised" target="_blank" rel="noopener noreferrer">
-                <img src={githubImg} alt="GitHub" />
+                <img src={images.githubImg} alt="GitHub" />
                 <span>GitHub</span>
               </a>
             </div>
             <div className={styles.faqRightIcon}>
               <a href="https://x.com/lonised_" target="_blank" rel="noopener noreferrer">
-                <img src={twitterImg} alt="Twitter" />
+                <img src={images.twitterImg} alt="Twitter" />
                 <span>Twitter</span>
               </a>
             </div>
             <div className={styles.faqRightIcon}>
               <a href="https://www.instagram.com/lonised_/" target="_blank" rel="noopener noreferrer">
-                <img src={instagramImg} alt="Instagram" />
+                <img src={images.instagramImg} alt="Instagram" />
                 <span>Instagram</span>
               </a>
             </div>
@@ -201,7 +186,7 @@ const Home = () => {
 
       <footer className={styles['wrapper-end']}>
         <div className={styles.end}>
-        <p>© 2024 by Daniil D. Shterkel. Powered and secured by <a href="#">Wix</a></p>
+          <p>© 2024 by Daniil D. Shterkel. Powered and secured by <a href="#">Wix</a></p>
         </div>
       </footer>
     </div>

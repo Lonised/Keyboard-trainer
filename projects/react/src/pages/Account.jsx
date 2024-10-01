@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../assets/css/Account.module.css';
-import profileImg from '../assets/img/profile.png';
-import menuImg from '../assets/img/menu.png';
-import cameraImg from '../assets/img/photo-camera.png';
-import downArrowImg from '../assets/img/downArrow.png';
-
-import pdfExample from '../assets/img/pdf.png';
-import star from '../assets/img/star.png';
-
-import linkedinImg from '../assets/img/in.png';
-import githubImg from '../assets/img/git.png';
-import twitterImg from '../assets/img/twitter.png';
-import instagramImg from '../assets/img/instagram.png';
+import { images } from '../components/images';
 
 const Account = () => {
     const [activeSection, setActiveSection] = useState('profile');
@@ -32,85 +21,87 @@ const Account = () => {
 
     return (
         <div>
-            <header className={styles['wrapper-header']}>
+            <header className={`${styles['wrapper-header']}`}>
                 <div className={styles.header}>
                     <div className={styles.headerLeft}>
-                        <h1>Daniil Dmitrievich Shterkel</h1>
+                    <h1>Daniil Dmitrievich Shterkel</h1>
                     </div>
-
+        
                     <div className={styles.headerRight}>
-                        <a href="#">
-                            <img src={menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
-                        </a>
-                        <div className={styles.headerRightA}>
-                            <a href="/" className={styles['headerRight-href-active']}>Home</a>
-                            <a href="/about" className={styles['headerRight-href']}>About</a>
-                            <a href="/projects" className={styles['headerRight-href']}>Projects</a>
-                            <a href="/media" className={styles['headerRight-href']}>Media</a>
-                            <a href="/blog" className={styles['headerRight-href']}>Blog</a>
-                            <a href="/contact" className={styles['headerRight-href']}>Contact</a>
-                        </div>
+                    <a href="#">
+                        <img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
+                    </a>
+                    <div className={styles.headerRightA}>
+                        <a href="/" className={styles['headerRight-href-active']}>Home</a>
+                        <a href="/about" className={styles['headerRight-href']}>About</a>
+                        <a href="/projects" className={styles['headerRight-href']}>Projects</a>
+                        <a href="/media" className={styles['headerRight-href']}>Media</a>
+                        <a href="/blog" className={styles['headerRight-href']}>Blog</a>
+                        <a href="/contact" className={styles['headerRight-href']}>Contact</a>
                     </div>
-
-                    <div className={styles.sidebar} id="sidebar">
-                        <div className={styles.sidebarLogin}>
-                            <a href="#">
-                                <img src={profileImg} alt="Profile" />
-                                <p>Log In</p>
-                            </a>
-                        </div>
-                        <div className={styles.sidebarLine}></div>
-                        <a href="/" className={styles['sidebar-href-active']}>Home</a>
-                        <a href="/about" className={styles['sidebar-href']}>About</a>
-                        <a href="/projects" className={styles['sidebar-href']}>Projects</a>
-                        <a href="/media" className={styles['sidebar-href']}>Media</a>
-                        <a href="/blog" className={styles['sidebar-href']}>Blog</a>
-                        <a href="/contact" className={styles['sidebar-href']}>Contact</a>
+                    </div>
+        
+                    {/* Sidebar */}
+                    <div className={`${styles.sidebar}`} id="sidebar">
+                    <div className={styles.sidebarLogin}>
+                        <a href="#"><img src={images.profileImg} alt="Profile" />
+                        <p>Log In</p>
+                        </a>
+                    </div>
+                    <div className={styles.sidebarLine}></div>
+                    <a href="/" className={styles['sidebar-href-active']}>Home</a>
+                    <a href="/about" className={styles['sidebar-href']}>About</a>
+                    <a href="/projects" className={styles['sidebar-href']}>Projects</a>
+                    <a href="/media" className={styles['sidebar-href']}>Media</a>
+                    <a href="/blog" className={styles['sidebar-href']}>Blog</a>
+                    <a href="/contact" className={styles['sidebar-href']}>Contact</a>
                     </div>
                 </div>
-
+    
                 <div className={styles.headerLine}></div>
-
+    
+                {/* Secondary Sidebar */}
                 <nav className={styles['wrapper-nav']}>
                     <div className={styles.navLeft}>
-                        <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
+                    <p>Student, Faculty of Innovative Technologies, Karaganda Saginov Technical University, STU</p>
                     </div>
                     <div className={styles.navRight}>
-                        <a id="profile-link" href="/login">
-                            <img id="user-avatar" src={profileImg} alt="User Avatar" />
-                        </a>
-                        <a href="/login">
-                            <p id="user-name">Log In</p>
-                        </a>
-                        <a href="#" id="sidebarToggleBtn">
-                            <img src={downArrowImg} alt="Toggle Sidebar" />
-                        </a>
+                    <a id="profile-link" href="/login">
+                        <img id="user-avatar" src={images.profileImg} alt="User Avatar" />
+                    </a>
+                    <a href="/login">
+                        <p id="user-name">Log In</p>
+                    </a>
+                    <a href="#">
+                        <img src={images.downArrowImg} alt="Toggle Sidebar" />
+                    </a>
                     </div>
-
-                    <div id="secondarySidebar" className={styles['secondary-sidebar']}>
-                        <a href="/account" id="profileLink">Profile</a>
-                        <a href="/account" id="ordersLink">My Orders</a>
-                        <a href="/account" id="walletLink">Files</a>
-                        <a href="/account" id="draftsLink">My Account</a>
-                        <a href="/account" id="addressesLink">Notifications</a>
-                        <a href="/account" id="accountLink">Settings</a>
-                        <hr />
-                        <a href="#" id="logoutBtn">Log Out</a>
+        
+                    {/* Secondary Sidebar */}
+                    <div id="secondarySidebar" className={`${styles['secondary-sidebar']}`}>
+                    <a href="/account" id="profileLink">Profile</a>
+                    <a href="/account" id="ordersLink">My Orders</a>
+                    <a href="/account" id="walletLink">Files</a>
+                    <a href="/account" id="draftsLink">My Account</a>
+                    <a href="/account" id="addressesLink">Notifications</a>
+                    <a href="/account" id="accountLink">Settings</a>
+                    <hr />
+                    <a href="#" id="logoutBtn">Log Out</a>
                     </div>
                 </nav>
             </header>
-
+  
             <div className={styles.overlay} id="overlay"></div>
 
             <section className={styles['wrapper-account']}>
                 <div className={styles['account']}>
                     <div className={styles['account-navigation']}>
                         <div className={styles['accountNavName']}>
-                            <a href="#"><img src={menuImg} className={styles['NavNameImg']} id="NavNameBtn" alt="Menu" /></a>
+                            <a href="#"><img src={images.menu} className={styles['NavNameImg']} id="NavNameBtn" alt="Menu" /></a>
                             <div className={styles['avatar-container']} id="avatar-container">
-                                <img id="NavAvatar" src={profileImg} alt="User Avatar" className={styles['avatar']} />
+                                <img id="NavAvatar" src={images.profile} alt="User Avatar" className={styles['avatar']} />
                                 <div className={styles['camera-icon']}>
-                                    <img src={cameraImg} alt="Change Avatar" />
+                                    <img src={images.camera} alt="Change Avatar" />
                                 </div>
                             </div>
 
@@ -195,9 +186,9 @@ const Account = () => {
                             <div className={styles["MyOrders"]}>
                                 <h3>My orders</h3>
                                 <p>View your order history and check the status of recent orders</p>
-                                <div className = {styles['actionLine']}></div>
+                                <div className={styles['actionLine']}></div>
                                 <div className={styles['MyOrdersFunction']}>
-                                    <h4>You haven't orderes anything yet.</h4>
+                                    <h4>You haven't ordered anything yet.</h4>
                                     <a href="#">Look</a>
                                 </div>      
                                 <div className={`${styles['actionLine']}`}></div>
@@ -226,31 +217,31 @@ const Account = () => {
                                     <div className={`${styles['filesDownFunction']}`}>
                                         <div className={`${styles['filesFunctionExample']}`}>
                                             <div className={`${styles['filesFunctionName']}`}>
-                                                <img src={pdfExample} alt="#"/>
+                                                <img src={images.pdfExample} alt="#" />
                                                 <div className={`${styles[`filesFunctionNameDop`]}`}>
                                                     <a href="#">File name</a>
                                                     <p>4.15 MB</p>
                                                 </div>
                                             </div>
                                             <div className={`${styles['fileFunctionInfo']}`}>
-                                                <p className={`${styles['fileFunctionTime']}`}>15 july 2024</p>
-                                                <img src={star} alt="#" />
-                                                <img src={menuImg} alt="#" />
+                                                <p className={`${styles['fileFunctionTime']}`}>15 July 2024</p>
+                                                <img src={images.star} alt="#" />
+                                                <img src={images.menu} alt="#" />
                                             </div>
                                         </div>
                                         <div className={`${styles['filesLine']}`}></div>
                                         <div className={`${styles['filesFunctionExample']}`}>
                                             <div className={`${styles['filesFunctionName']}`}>
-                                                <img src={pdfExample} alt="#"/>
+                                                <img src={images.pdfExample} alt="#" />
                                                 <div className={`${styles[`filesFunctionNameDop`]}`}>
                                                     <a href="#">File name</a>
                                                     <p>4.15 MB</p>
                                                 </div>
                                             </div>
                                             <div className={`${styles['fileFunctionInfo']}`}>
-                                                <p className={`${styles['fileFunctionTime']}`}>15 july 2024</p>
-                                                <img src={star} alt="#" />
-                                                <img src={menuImg} alt="#" />
+                                                <p className={`${styles['fileFunctionTime']}`}>15 July 2024</p>
+                                                <img src={images.star} alt="#" />
+                                                <img src={images.menu} alt="#" />
                                             </div>
                                         </div>
                                     </div>
@@ -262,62 +253,62 @@ const Account = () => {
 
                     {activeSection === 'my-account' && (
                         <div className={`${styles['account-my']} ${styles['account-section']} ${prevSection === 'my-account' ? styles['slide-out'] : ''} ${activeSection === 'my-account' ? styles['slide-in'] : styles.hidden}`}>
-                            <div className={`${styles['myAccount']}`}>
-                                <div className={`${styles['myAccountUp']}`}>
-                                    <div className={`${styles['myAccountUpLeft']}`}>
+                            <div className={styles['myAccount']}>
+                                <div className={styles['myAccountUp']}>
+                                    <div className={styles['myAccountUpLeft']}>
                                         <h1>Account</h1>
-                                        <p>View and edit information about yourself</p>    
-                                    </div>    
-                                    <div className={`${styles['myAccountUpRight']}`}>
-                                        <button className={`${styles['myAccountReset']}`}>Reset</button>
-                                        <button className={`${styles['myAccountUpdate']}`}>Update</button>
+                                        <p>View and edit information about yourself</p>
+                                    </div>
+                                    <div className={styles['myAccountUpRight']}>
+                                        <button className={styles['myAccountReset']}>Reset</button>
+                                        <button className={styles['myAccountUpdate']}>Update</button>
                                     </div>
                                 </div>
-                                <div className={`${styles['actionLine']}`}></div>
-                                <div className={`${styles['myAccountLogin']}`}>
+                                <div className={styles['actionLine']}></div>
+                                <div className={styles['myAccountLogin']}>
                                     <h2>Basic information</h2>
                                     <p>This information will be visible to all site users</p>
-                                    <div className={`${styles['myAccountLoginInput']}`}>
-                                        <div className={`${styles['myAccountLoginInputDown']}`}>
+                                    <div className={styles['myAccountLoginInput']}>
+                                        <div className={styles['myAccountLoginInputDown']}>
                                             <p>Display name *</p>
                                             <input type="text" />
                                         </div>
-                                        <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <div className={styles['myAccountLoginInputDown']}>
                                             <p>Name</p>
                                             <input type="text" />
                                         </div>
                                     </div>
-                                    <div className={`${styles['actionLine']}`}></div>
+                                    <div className={styles['actionLine']}></div>
                                     <h2>Personal data</h2>
                                     <p>Update your personal information</p>
-                                    <div className={`${styles['myAccountLoginInfo']}`}>
-                                        <div className={`${styles['myAccountLoginInputDown']}`}>
+                                    <div className={styles['myAccountLoginInfo']}>
+                                        <div className={styles['myAccountLoginInputDown']}>
                                             <p>First Name</p>
                                             <input type="text" />
                                         </div>
-                                        <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <div className={styles['myAccountLoginInputDown']}>
                                             <p>Last Name</p>
                                             <input type="text" />
                                         </div>
-                                        <div className={`${styles['myAccountLoginInputDown']}`}>
+                                        <div className={styles['myAccountLoginInputDown']}>
                                             <p>Phone</p>
                                             <input type="text" />
                                         </div>
                                     </div>
-                                    <div className={`${styles['myAccountLoginButton']}`}>
-                                        <button className={`${styles['myAccountReset']}`}>Reset</button>
-                                        <button className={`${styles['myAccountUpdate']}`}>Update</button>
+                                    <div className={styles['myAccountLoginButton']}>
+                                        <button className={styles['myAccountReset']}>Reset</button>
+                                        <button className={styles['myAccountUpdate']}>Update</button>
                                     </div>
                                 </div>
-                                <div className={`${styles['actionLine']}`}></div>
-                                <div className={`${styles['myAccountDown']}`}>
-                                <   h2>Account login information</h2>
+                                <div className={styles['actionLine']}></div>
+                                <div className={styles['myAccountDown']}>
+                                    <h2>Account login information</h2>
                                     <p>View and update your login email and password</p>
                                     <h2>Email for login:</h2>
                                     <p>daniilshterkel05@gmail.com</p>
                                     <h2>Password:</h2>
                                     <p>******</p>
-                                </div>  
+                                </div>
                             </div>
                         </div>
                     )}
@@ -326,12 +317,12 @@ const Account = () => {
                         <div className={`${styles['account-notifications']} ${styles['account-section']} ${prevSection === 'notifications' ? styles['slide-out'] : ''} ${activeSection === 'notifications' ? styles['slide-in'] : styles.hidden}`}>
                             <div className={styles['notifications']}>
                                 <h1>Notifications</h1>
-                                <div className={`${styles['actionLine']}`}></div>
-                                <div className={`${styles['notifications-function']}}`}></div>
-                                    <div className={`${styles['notification-alert']}}`}>
-                                        <h2>No notifications yet</h2>
-                                        <p>Notifications will appear here when you start leaving comments, following members, and liking posts.</p>
-                                    </div>
+                                <div className={styles['actionLine']}></div>
+                                <div className={styles['notifications-function']}></div>
+                                <div className={styles['notification-alert']}>
+                                    <h2>No notifications yet</h2>
+                                    <p>Notifications will appear here when you start leaving comments, following members, and liking posts.</p>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -339,21 +330,21 @@ const Account = () => {
                     {activeSection === 'settings' && (
                         <div className={`${styles['account-settings']} ${styles['account-section']} ${prevSection === 'settings' ? styles['slide-out'] : ''} ${activeSection === 'settings' ? styles['slide-in'] : styles.hidden}`}>
                             <div className={styles['settings']}>
-                                <div className={`${styles['settingsUp']}}`}>
+                                <div className={styles['settingsUp']}>
                                     <h2>Setting up notifications</h2>
                                     <p>Choose which notifications you want to receive</p>
                                 </div>
-                                <div className={`${styles['actionLine']}`}></div>
-                                <div className={`${styles['settingsDown']}}`}>
+                                <div className={styles['actionLine']}></div>
+                                <div className={styles['settingsDown']}>
                                     <h2>Notifications by email</h2>
                                 </div>
                             </div>
                         </div>
                     )}
 
-
                 </div>
             </section>
+
 
             <section className={styles['wrapper-faq']}>
                 <div className={styles.faq}>
@@ -365,25 +356,25 @@ const Account = () => {
                     <div className={styles.faqRight}>
                         <div className={styles.faqRightIcon}>
                             <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/" target="_blank" rel="noopener noreferrer">
-                                <img src={linkedinImg} alt="LinkedIn" />
+                                <img src={images.linkedin} alt="LinkedIn" />
                                 <span>LinkedIn</span>
                             </a>
                         </div>
                         <div className={styles.faqRightIcon}>
                             <a href="https://github.com/Lonised" target="_blank" rel="noopener noreferrer">
-                                <img src={githubImg} alt="GitHub" />
+                                <img src={images.github} alt="GitHub" />
                                 <span>GitHub</span>
                             </a>
                         </div>
                         <div className={styles.faqRightIcon}>
                             <a href="https://x.com/lonised_" target="_blank" rel="noopener noreferrer">
-                                <img src={twitterImg} alt="Twitter" />
+                                <img src={images.twitter} alt="Twitter" />
                                 <span>Twitter</span>
                             </a>
                         </div>
                         <div className={styles.faqRightIcon}>
                             <a href="https://www.instagram.com/lonised_/" target="_blank" rel="noopener noreferrer">
-                                <img src={instagramImg} alt="Instagram" />
+                                <img src={images.instagram} alt="Instagram" />
                                 <span>Instagram</span>
                             </a>
                         </div>

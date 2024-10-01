@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import styles from '../assets/css/Login.module.css';
-import menuIcon from '../assets/img/menu.png';
-import profileIcon from '../assets/img/profile.png';
-import wallpaper from '../assets/img/wallpaper.png';
-import linkedinIcon from '../assets/img/in.png';
-import githubIcon from '../assets/img/git.png';
-import twitterIcon from '../assets/img/twitter.png';
-import instagramIcon from '../assets/img/instagram.png';
+import { images } from '../components/images';
 
 const Login = () => {
-  const [isLoginForm, setIsLoginForm] = useState(true); // Состояние для переключения между формами
+  const [isLoginForm, setIsLoginForm] = useState(true); 
 
   const toggleForm = () => {
-    setIsLoginForm(!isLoginForm); // Переключаемся между формами
+    setIsLoginForm(!isLoginForm); 
   };
 
   return (
@@ -24,7 +18,7 @@ const Login = () => {
           </div>
 
           <div className={styles['headerRight']}>
-            <a href="#"><img src={menuIcon} className={styles['headerRight-img']} id="burger-menu" alt="Menu" /></a>
+            <a href="#"><img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" /></a>
             <div className={styles['headerRightA']}>
               <a href="/" className={styles['headerRight-href']}>Home</a>
               <a href="/about" className={styles['headerRight-href']}>About</a>
@@ -37,7 +31,7 @@ const Login = () => {
 
           <div className={styles['sidebar']} id="sidebar">
             <div className={styles['sidebarLogin']}>
-              <a href="#"><img src={profileIcon} alt="Profile" /></a>
+              <a href="#"><img src={images.profileImg} alt="Profile" /></a>
               <a href="#">Log In</a>
             </div>
             <div className={styles['sidebarLine']}></div>
@@ -86,7 +80,7 @@ const Login = () => {
               <div className={styles['registerGroupUpLeft']}>
                 <div className={styles['registerAvatar']}>
                   <div id="avatarContainer" className={styles['avatar-container']}>
-                    <img id="avatarImg" src={profileIcon} alt="Avatar" className={styles['avatar']} />
+                    <img id="avatarImg" src={images.profileImg} alt="Avatar" className={styles['avatar']} />
                   </div>
                   <input type="file" id="avatarInput" accept="image/*" style={{ display: 'none' }} />
                 </div>
@@ -135,12 +129,6 @@ const Login = () => {
         )}
       </section>
 
-      <section className={styles['wrapper-wallpaper']}>
-        <div className={styles['wallpaper']}>
-          <img src={wallpaper} alt="Wallpaper" />
-        </div>
-      </section>
-
       <section className={styles['wrapper-faq']}>
         <div className={styles['faq']}>
           <div className={styles['faqLeft']}>
@@ -149,10 +137,10 @@ const Login = () => {
             <a href="#">FAQ</a>
           </div>
           <div className={styles['faqRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={linkedinIcon} alt="LinkedIn" /><span>Linkedin</span></a>
-            <a href="https://github.com/Lonised"><img src={githubIcon} alt="GitHub" /><span>GitHub</span></a>
-            <a href="https://x.com/lonised_"><img src={twitterIcon} alt="Twitter" /><span>Twitter</span></a>
-            <a href="https://www.instagram.com/lonised_/"><img src={instagramIcon} alt="Instagram" /><span>Instagram</span></a>
+            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={images.linkedinImg} alt="LinkedIn" /><span>Linkedin</span></a>
+            <a href="https://github.com/Lonised"><img src={images.githubImg} alt="GitHub" /><span>GitHub</span></a>
+            <a href="https://x.com/lonised_"><img src={images.twitterImg} alt="Twitter" /><span>Twitter</span></a>
+            <a href="https://www.instagram.com/lonised_/"><img src={images.instagramImg} alt="Instagram" /><span>Instagram</span></a>
           </div>
         </div>
       </section>

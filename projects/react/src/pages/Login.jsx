@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
 import styles from '../assets/css/Login.module.css';
 import { images } from '../components/images';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [isLoginForm, setIsLoginForm] = useState(true); 
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleForm = () => {
     setIsLoginForm(!isLoginForm); 
+  };
+
+  const handleLinkClick = (href) => {
+    if (location.pathname === href) {
+      navigate(0);
+    } else {
+      setIsFadingOut(true);
+      setTimeout(() => {
+        navigate(href);
+      }, 1000);
+    }
   };
 
   return (
@@ -19,13 +33,13 @@ const Login = () => {
 
           <div className={styles['headerRight']}>
             <a href="#"><img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" /></a>
-            <div className={styles['headerRightA']}>
-              <a href="/" className={styles['headerRight-href']}>Home</a>
-              <a href="/about" className={styles['headerRight-href']}>About</a>
-              <a href="/projects" className={styles['headerRight-href']}>Projects</a>
-              <a href="/media" className={styles['headerRight-href']}>Media</a>
-              <a href="/blog" className={styles['headerRight-href']}>Blog</a>
-              <a href="/contact" className={styles['headerRight-href']}>Contact</a>
+            <div className={styles.headerRightA}>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/')}>Home</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/about')}>About</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/projects')}>Projects</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/media')}>Media</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/blog')}>Blog</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/contact')}>Contact</a>
             </div>
           </div>
 
@@ -54,96 +68,98 @@ const Login = () => {
 
       <div className={styles['overlay']} id="overlay"></div>
 
-      <section className={styles['wrapper-logo']}>
-        <h1>{isLoginForm ? 'Login' : 'Register'}</h1>
-      </section>
+      <main className={`${styles.wrapper} ${isFadingOut ? styles.fadeOut : ''}`}>
+        <section className={styles['wrapper-logo']}>
+          <h1>{isLoginForm ? 'Login' : 'Register'}</h1>
+        </section>
 
-      <section className={styles['wrapper-login']}>
-        {isLoginForm ? (
-          <div className={styles['login']} id="login-form">
-            <div className={styles['loginGroup']}>
-              <label htmlFor="email">Login</label>
-              <input type="email" id="email" name="email" required />
+        <section className={styles['wrapper-login']}>
+          {isLoginForm ? (
+            <div className={styles['login']} id="login-form">
+              <div className={styles['loginGroup']}>
+                <label htmlFor="email">Login</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div className={styles['loginGroup']}>
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" name="password" required />
+              </div>
+              <div className={styles['loginButton']}>
+                <a href="#" className={styles['btn-item']} id="login-button">Login</a>
+                <a href="#" className={styles['btn-item']} id="toggle-form" onClick={toggleForm}>Don't have an account? Create</a>
+              </div>
             </div>
-            <div className={styles['loginGroup']}>
-              <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" required />
-            </div>
-            <div className={styles['loginButton']}>
-              <a href="#" className={styles['btn-item']} id="login-button">Login</a>
-              <a href="#" className={styles['btn-item']} id="toggle-form" onClick={toggleForm}>Don't have an account? Create</a>
-            </div>
-          </div>
-        ) : (
-          <div className={styles['register']} id="register-form">
-            <div className={styles['registerGroupUp']}>
-              <div className={styles['registerGroupUpLeft']}>
-                <div className={styles['registerAvatar']}>
-                  <div id="avatarContainer" className={styles['avatar-container']}>
-                    <img id="avatarImg" src={images.profileImg} alt="Avatar" className={styles['avatar']} />
+          ) : (
+            <div className={styles['register']} id="register-form">
+              <div className={styles['registerGroupUp']}>
+                <div className={styles['registerGroupUpLeft']}>
+                  <div className={styles['registerAvatar']}>
+                    <div id="avatarContainer" className={styles['avatar-container']}>
+                      <img id="avatarImg" src={images.profileImg} alt="Avatar" className={styles['avatar']} />
+                    </div>
+                    <input type="file" id="avatarInput" accept="image/*" style={{ display: 'none' }} />
                   </div>
-                  <input type="file" id="avatarInput" accept="image/*" style={{ display: 'none' }} />
+                  <div id="cropperModal" style={{ display: 'none' }}>
+                    <img id="cropperImage" src="" alt="Image to crop" />
+                    <button id="cropButton">Crop</button>
+                  </div>
                 </div>
-                <div id="cropperModal" style={{ display: 'none' }}>
-                  <img id="cropperImage" src="" alt="Image to crop" />
-                  <button id="cropButton">Crop</button>
+
+                <div className={styles['registerGroupUpRight']}>
+                  <div className={styles['registerGroup']}>
+                    <label htmlFor="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required />
+                  </div>
+                  <div className={styles['registerGroup']}>
+                    <label htmlFor="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required />
+                  </div>
                 </div>
               </div>
 
-              <div className={styles['registerGroupUpRight']}>
-                <div className={styles['registerGroup']}>
-                  <label htmlFor="first-name">First Name</label>
-                  <input type="text" id="first-name" name="first-name" required />
+              <div className={styles['registerGroupDown']}>
+                <div className={styles['registerGroupDownLeft']}>
+                  <div className={styles['registerGroup']}>
+                    <label htmlFor="reg-email">Email</label>
+                    <input type="email" id="reg-email" name="reg-email" required />
+                  </div>
                 </div>
-                <div className={styles['registerGroup']}>
-                  <label htmlFor="last-name">Last Name</label>
-                  <input type="text" id="last-name" name="last-name" required />
+                <div className={styles['registerGroupDownRight']}>
+                  <div className={styles['registerGroup']}>
+                    <label htmlFor="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="reg-password" required />
+                  </div>
+                  <div className={styles['registerGroup']}>
+                    <label htmlFor="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required />
+                  </div>
                 </div>
+              </div>
+
+              <div className={styles['registerButton']}>
+                <a href="#" className={styles['btn-item']} id="register-button">Register</a>
+                <a href="#" className={styles['btn-item']} id="toggle-form-back" onClick={toggleForm}>Already have an account? Login</a>
               </div>
             </div>
+          )}
+        </section>
 
-            <div className={styles['registerGroupDown']}>
-              <div className={styles['registerGroupDownLeft']}>
-                <div className={styles['registerGroup']}>
-                  <label htmlFor="reg-email">Email</label>
-                  <input type="email" id="reg-email" name="reg-email" required />
-                </div>
-              </div>
-              <div className={styles['registerGroupDownRight']}>
-                <div className={styles['registerGroup']}>
-                  <label htmlFor="reg-password">Password</label>
-                  <input type="password" id="reg-password" name="reg-password" required />
-                </div>
-                <div className={styles['registerGroup']}>
-                  <label htmlFor="confirm-password">Confirm Password</label>
-                  <input type="password" id="confirm-password" name="confirm-password" required />
-                </div>
-              </div>
+        <section className={styles['wrapper-faq']}>
+          <div className={styles['faq']}>
+            <div className={styles['faqLeft']}>
+              <a href="#">Story Policy</a>
+              <a href="#">Shipping & Returns</a>
+              <a href="#">FAQ</a>
             </div>
-
-            <div className={styles['registerButton']}>
-              <a href="#" className={styles['btn-item']} id="register-button">Register</a>
-              <a href="#" className={styles['btn-item']} id="toggle-form-back" onClick={toggleForm}>Already have an account? Login</a>
+            <div className={styles['faqRight']}>
+              <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={images.linkedinImg} alt="LinkedIn" /><span>Linkedin</span></a>
+              <a href="https://github.com/Lonised"><img src={images.githubImg} alt="GitHub" /><span>GitHub</span></a>
+              <a href="https://x.com/lonised_"><img src={images.twitterImg} alt="Twitter" /><span>Twitter</span></a>
+              <a href="https://www.instagram.com/lonised_/"><img src={images.instagramImg} alt="Instagram" /><span>Instagram</span></a>
             </div>
           </div>
-        )}
-      </section>
-
-      <section className={styles['wrapper-faq']}>
-        <div className={styles['faq']}>
-          <div className={styles['faqLeft']}>
-            <a href="#">Story Policy</a>
-            <a href="#">Shipping & Returns</a>
-            <a href="#">FAQ</a>
-          </div>
-          <div className={styles['faqRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/"><img src={images.linkedinImg} alt="LinkedIn" /><span>Linkedin</span></a>
-            <a href="https://github.com/Lonised"><img src={images.githubImg} alt="GitHub" /><span>GitHub</span></a>
-            <a href="https://x.com/lonised_"><img src={images.twitterImg} alt="Twitter" /><span>Twitter</span></a>
-            <a href="https://www.instagram.com/lonised_/"><img src={images.instagramImg} alt="Instagram" /><span>Instagram</span></a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>  
 
       <footer className={styles['wrapper-end']}>
         <div className={styles['end']}>

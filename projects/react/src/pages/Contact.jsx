@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../assets/css/Contact.module.css';
 import { images } from '../components/images'; 
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (href) => {
+    if (location.pathname === href) {
+      navigate(0);
+    } else {
+      setIsFadingOut(true);
+      setTimeout(() => {
+        navigate(href);
+      }, 1000);
+    }
+  };
+
   return (
     <div>
       <header className={styles['wrapper-header']}>
@@ -15,13 +31,13 @@ const Contact = () => {
             <a href="#">
               <img src={images.menuImg} className={styles['headerRight-img']} id="burger-menu" alt="Menu" />
             </a>
-            <div className={styles['headerRightA']}>
-              <a href="/" className={styles['headerRight-href']}>Home</a>
-              <a href="/about" className={styles['headerRight-href']}>About</a>
-              <a href="/projects" className={styles['headerRight-href']}>Projects</a>
-              <a href="/media" className={styles['headerRight-href']}>Media</a>
-              <a href="/blog" className={styles['headerRight-href']}>Blog</a>
-              <a href="/contact" className={styles['headerRight-href-active']}>Contact</a>
+            <div className={styles.headerRightA}>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/')}>Home</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/about')}>About</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/projects')}>Projects</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/media')}>Media</a>
+              <a href="#" className={styles['headerRight-href']} onClick={() => handleLinkClick('/blog')}>Blog</a>
+              <a href="#" className={styles['headerRight-href-active']} onClick={() => handleLinkClick('/contact')}>Contact</a>
             </div>
           </div>
 
@@ -72,100 +88,102 @@ const Contact = () => {
         </nav>
       </header>
 
-      <section className={styles['wrapper-logo']}>
-        <div className={styles['logo']}>
-          <h1>Contact</h1>
-        </div>
-      </section>
+      <main className={`${styles.wrapper} ${isFadingOut ? styles.fadeOut : ''}`}>
+        <section className={styles['wrapper-logo']}>
+          <div className={styles['logo']}>
+            <h1>Contact</h1>
+          </div>
+        </section>
 
-      <section className={styles['wrapper-address']}>
-        <div className={styles['address']}>
-          <div className={styles['addressLeft']}>
-            <p>daniilshterkel05@gmail.com</p>
-            <p>7-777-777-77-77</p>
+        <section className={styles['wrapper-address']}>
+          <div className={styles['address']}>
+            <div className={styles['addressLeft']}>
+              <p>daniilshterkel05@gmail.com</p>
+              <p>7-777-777-77-77</p>
+            </div>
+            <div className={styles['addressRight']}>
+              <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
+                <img src={images.linkedinImg} alt="LinkedIn" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Lonised">
+                <img src={images.githubImg} alt="GitHub" />
+                <span>GitHub</span>
+              </a>
+              <a href="https://x.com/lonised_">
+                <img src={images.twitterImg} alt="Twitter" />
+                <span>Twitter</span>
+              </a>
+              <a href="https://www.instagram.com/lonised_/">
+                <img src={images.instagramImg} alt="Instagram" />
+                <span>Instagram</span>
+              </a>
+            </div>
           </div>
-          <div className={styles['addressRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
-              <img src={images.linkedinImg} alt="LinkedIn" />
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/Lonised">
-              <img src={images.githubImg} alt="GitHub" />
-              <span>GitHub</span>
-            </a>
-            <a href="https://x.com/lonised_">
-              <img src={images.twitterImg} alt="Twitter" />
-              <span>Twitter</span>
-            </a>
-            <a href="https://www.instagram.com/lonised_/">
-              <img src={images.instagramImg} alt="Instagram" />
-              <span>Instagram</span>
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles['wrapper-mail']}>
-        <div className={styles['mail']}>
-          <div className={styles['mailUp']}>
-            <div className={styles['mailInput']}>
-              <p>First Name *</p>
-              <input type="text" id="first-name" required />
+        <section className={styles['wrapper-mail']}>
+          <div className={styles['mail']}>
+            <div className={styles['mailUp']}>
+              <div className={styles['mailInput']}>
+                <p>First Name *</p>
+                <input type="text" id="first-name" required />
+              </div>
+              <div className={styles['mailInput']}>
+                <p>Last Name *</p>
+                <input type="text" id="last-name" required />
+              </div>
             </div>
-            <div className={styles['mailInput']}>
-              <p>Last Name *</p>
-              <input type="text" id="last-name" required />
+            <div className={styles['mailMiddle']}>
+              <div className={styles['mailInput']}>
+                <p>Email Address *</p>
+                <input type="email" id="email" required />
+              </div>
+              <div className={styles['mailInput']}>
+                <p>Phone</p>
+                <input type="tel" id="phone" />
+              </div>
+            </div>
+            <div className={styles['mailDown']}>
+              <div className={styles['mailDownMessage']}>
+                <p>Type your message here...</p>
+                <textarea id="message" required></textarea>
+              </div>
+              <div className={styles['mailDownBtn']}>
+                <a href="#" className={styles['btn-item']} id="submit-btn">Submit</a>
+              </div>
             </div>
           </div>
-          <div className={styles['mailMiddle']}>
-            <div className={styles['mailInput']}>
-              <p>Email Address *</p>
-              <input type="email" id="email" required />
-            </div>
-            <div className={styles['mailInput']}>
-              <p>Phone</p>
-              <input type="tel" id="phone" />
-            </div>
-          </div>
-          <div className={styles['mailDown']}>
-            <div className={styles['mailDownMessage']}>
-              <p>Type your message here...</p>
-              <textarea id="message" required></textarea>
-            </div>
-            <div className={styles['mailDownBtn']}>
-              <a href="#" className={styles['btn-item']} id="submit-btn">Submit</a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles['wrapper-faq']}>
-        <div className={styles['faq']}>
-          <div className={styles['faqLeft']}>
-            <a href="#">Story Policy</a>
-            <a href="#">Shipping & Returns</a>
-            <a href="#">FAQ</a>
+        <section className={styles['wrapper-faq']}>
+          <div className={styles['faq']}>
+            <div className={styles['faqLeft']}>
+              <a href="#">Story Policy</a>
+              <a href="#">Shipping & Returns</a>
+              <a href="#">FAQ</a>
+            </div>
+            <div className={styles['faqRight']}>
+              <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
+                <img src={images.linkedinImg} alt="LinkedIn" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Lonised">
+                <img src={images.githubImg} alt="GitHub" />
+                <span>GitHub</span>
+              </a>
+              <a href="https://x.com/lonised_">
+                <img src={images.twitterImg} alt="Twitter" />
+                <span>Twitter</span>
+              </a>
+              <a href="https://www.instagram.com/lonised_/">
+                <img src={images.instagramImg} alt="Instagram" />
+                <span>Instagram</span>
+              </a>
+            </div>
           </div>
-          <div className={styles['faqRight']}>
-            <a href="https://www.linkedin.com/in/daniil-shterkel-686661318/">
-              <img src={images.linkedinImg} alt="LinkedIn" />
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/Lonised">
-              <img src={images.githubImg} alt="GitHub" />
-              <span>GitHub</span>
-            </a>
-            <a href="https://x.com/lonised_">
-              <img src={images.twitterImg} alt="Twitter" />
-              <span>Twitter</span>
-            </a>
-            <a href="https://www.instagram.com/lonised_/">
-              <img src={images.instagramImg} alt="Instagram" />
-              <span>Instagram</span>
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <footer className={styles['wrapper-end']}>
         <div className={styles['end']}>

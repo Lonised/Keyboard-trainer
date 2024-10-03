@@ -15,12 +15,15 @@ body, header, section, footer {
     transition: opacity 1s ease-out;
 }
 
-.hidden {
-    display: none;
+.wrapper {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+  
+  .fadeOut {
+    opacity: 0;
 }
-.active {
-    display: flex;
-}   
+  
 
 /*АНИМАЦИЯ ДЛЯ СЕКЦИЯМИ*/
 @keyframes slideInDown {

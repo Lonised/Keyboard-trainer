@@ -15,16 +15,15 @@ body, header, section, footer {
     transition: opacity 1s ease-out;
 }
 
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.fade-in {
+.wrapper {
+    transition: opacity 1s ease-in-out;
     opacity: 1;
-    transition: opacity 1s ease;
+  }
+  
+  .fadeOut {
+    opacity: 0;
 }
-
+  
 
 .hidden {
     display: none;

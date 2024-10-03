@@ -11,33 +11,17 @@ body, header, section, footer {
     transition: opacity 1s ease-out;
 }
 
-/*
-.fade-out {
-    animation: fadeOut 1s ;
+.wrapper {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+  
+  .fadeOut {
+    opacity: 0;
 }
   
-.fade-in {
-    animation: fadeIn 1s forwards;
-}
-*/  
 
-@keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-}
-  
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-}
+
   
 
 .hidden {
@@ -272,6 +256,8 @@ body, header, section, footer {
 .secondary-sidebar a:hover {
     color: #BE6D54;
 }
+
+
 
 .secondary-sidebar.visible {
     display: block; /* Когда добавляется класс 'visible', sidebar показывается */

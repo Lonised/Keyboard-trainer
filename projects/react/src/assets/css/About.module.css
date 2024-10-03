@@ -19,18 +19,15 @@ body, header, section, footer {
 }
 
 
-.fade-out {
+.wrapper {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+  
+  .fadeOut {
     opacity: 0;
 }
-
-.fade-in {
-    opacity: 1;
-}
-
-.hidden {
-    display: none;
-}
-
+  
 
 
 /*______________ ______________ ______________ ______________ ______________*/

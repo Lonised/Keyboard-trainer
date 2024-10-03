@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 import styles from '../assets/css/Contact.module.css';
 import { images } from '../components/images'; 
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -18,6 +20,87 @@ const Contact = () => {
       }, 1000);
     }
   };
+
+  const [formValues, setFormValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, phone, message } = formValues;
+
+    if (firstName === '' || lastName === '' || email === '' || message === '') {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Warning!',
+        text: 'Please fill out all required fields.',
+        confirmButtonText: 'OK',
+        background: '#F5F3EE',
+        customClass: {
+          popup: 'popup-class',
+          title: 'title-class',
+          content: 'content-class',
+          confirmButton: 'confirm-button-class',
+        },
+      });
+      return;
+    }
+
+    emailjs.init('0qB4cTOsqCXc9Lz4B'); // Инициализация EmailJS
+
+    emailjs.send('service_8wm57id', 'template_bvxke79', {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone: phone,
+      message: message,
+    })
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Message sent!',
+          confirmButtonText: 'OK',
+          background: '#F5F3EE',
+          customClass: {
+            popup: 'popup-class',
+            title: 'title-class',
+            content: 'content-class',
+            confirmButton: 'confirm-button-class',
+          },
+        });
+      })
+      .catch((error) => {
+        console.log('FAILED...', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'Error sending message.',
+          confirmButtonText: 'OK',
+          background: '#F5F3EE',
+          customClass: {
+            popup: 'popup-class',
+            title: 'title-class',
+            content: 'content-class',
+            confirmButton: 'confirm-button-class',
+          },
+        });
+      });
+  }
 
   return (
     <div>
@@ -123,37 +206,65 @@ const Contact = () => {
         </section>
 
         <section className={styles['wrapper-mail']}>
-          <div className={styles['mail']}>
-            <div className={styles['mailUp']}>
-              <div className={styles['mailInput']}>
-                <p>First Name *</p>
-                <input type="text" id="first-name" required />
-              </div>
-              <div className={styles['mailInput']}>
-                <p>Last Name *</p>
-                <input type="text" id="last-name" required />
-              </div>
+        <form className={styles['mail']} onSubmit={handleSubmit}>
+          <div className={styles['mailUp']}>
+            <div className={styles['mailInput']}>
+              <p>First Name *</p>
+              <input
+                type="text"
+                id="firstName"
+                value={formValues.firstName}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-            <div className={styles['mailMiddle']}>
-              <div className={styles['mailInput']}>
-                <p>Email Address *</p>
-                <input type="email" id="email" required />
-              </div>
-              <div className={styles['mailInput']}>
-                <p>Phone</p>
-                <input type="tel" id="phone" />
-              </div>
-            </div>
-            <div className={styles['mailDown']}>
-              <div className={styles['mailDownMessage']}>
-                <p>Type your message here...</p>
-                <textarea id="message" required></textarea>
-              </div>
-              <div className={styles['mailDownBtn']}>
-                <a href="#" className={styles['btn-item']} id="submit-btn">Submit</a>
-              </div>
+            <div className={styles['mailInput']}>
+              <p>Last Name *</p>
+              <input
+                type="text"
+                id="lastName"
+                value={formValues.lastName}
+                onChange={handleInputChange}
+                required
+              />
             </div>
           </div>
+          <div className={styles['mailMiddle']}>
+            <div className={styles['mailInput']}>
+              <p>Email Address *</p>
+              <input
+                type="email"
+                id="email"
+                value={formValues.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className={styles['mailInput']}>
+              <p>Phone</p>
+              <input
+                type="tel"
+                id="phone"
+                value={formValues.phone}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <div className={styles['mailDown']}>
+            <div className={styles['mailDownMessage']}>
+              <p>Type your message here...</p>
+              <textarea
+                id="message"
+                value={formValues.message}
+                onChange={handleInputChange}
+                required
+              ></textarea>
+            </div>
+            <div className={styles['mailDownBtn']}>
+              <button type="submit" className={styles['btn-item']} id="submit-btn">Submit</button>
+            </div>
+          </div>
+        </form>
         </section>
 
         <section className={styles['wrapper-faq']}>

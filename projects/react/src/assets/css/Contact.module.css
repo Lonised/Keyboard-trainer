@@ -633,8 +633,6 @@ body, header, section, footer {
     color: #BE6D54;
 }
 
-
-
 .btn-item {
     text-decoration: none;
     position: relative;
@@ -650,10 +648,8 @@ body, header, section, footer {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    margin-left: 60px;
-    margin-right: 40px;
 }
+
 .btn-item:before, .btn-item:after {
     content: '';
     position: absolute;
@@ -689,7 +685,6 @@ body, header, section, footer {
 .btn-effect:hover:before, .btn-effect:hover:after {
     width: 100%;
 }
-
 
 
 

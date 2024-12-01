@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клавиатурный тренажер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Первое окно -->
+        <div id="start-screen" data-state="start">
+            <h1>Клавиатурный тренажер</h1>
+            <button id="start-btn">Начать</button>
+        </div>
+    
+        <!-- Второе окно -->
+        <div id="intro-screen" data-state="intro" style="display: none;">
+            <h2>Напечатай этот текст и проверь свою скорость печати</h2>
+            <button id="test-btn">Запустить тест</button>
+        </div>
+    
+        <!-- Третье окно -->
+        <div id="test-screen" data-state="test" style="display: none;">
+            <div id="text"></div>
+            <input type="text" id="input-field" class="input-field" />
+            <div id="timer"></div>
+            <button id="cancel-btn">Отменить тест</button>
+        </div>
+    
+        <!-- Четвертое окно -->
+        <div id="result-screen" data-state="result" style="display: none;">
+            <div class="result">
+                <p id="result-message"></p>
+                <p id="correct-chars"></p>
+                <p id="errors"></p>
+                <p id="speed"></p>
+            </div>
+            <button id="restart-btn">Вернуться</button>
+        </div>
+    
+        <!-- Пятое окно -->
+        <div id="no-result-screen" data-state="no-result" style="display: none;">
+            <p>Нет результатов</p>
+            <button id="restart-btn-no-result">Вернуться</button>
+        </div>
+    </div>    
+
+    <button id="theme-toggle" class="theme-toggle-btn">🌞</button>
+    <script src="renderer.js"></script>
+</body>
+</html>

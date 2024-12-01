@@ -1,0 +1,300 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+#typing-area {
+    display: none;
+    margin-top: 20px;
+}
+
+#text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+#input-field {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #888;
+}
+
+#result {
+    display: none;
+    margin-top: 20px;
+}
+
+#correct-chars, #errors, #speed {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.back-btn {
+    background-color: #f44336;
+}
+
+.back-btn:hover {
+    background-color: #e53935;
+}
+
+.cancel-btn {
+    background-color: #ff9800;
+}
+
+.cancel-btn:hover {
+    background-color: #fb8c00;
+}
+
+.correct {
+    color: #4CAF50;
+}
+
+.incorrect {
+    color: #f44336;
+}
+
+
+
+
+
+
+
+/* Основной стиль */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+#text {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+#input-field {
+    width: 80%;
+    font-size: 18px;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+
+
+.theme-toggle-btn {
+    position: fixed; /* Фиксированное положение */
+    bottom: 10px;    /* Расстояние от нижнего края окна */
+    right: 10px;     /* Расстояние от правого края окна */
+    padding: 5px 10px; /* Размер кнопки */
+    font-size: 12px; /* Размер текста на кнопке */
+    background-color: #555; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    z-index: 1000; /* Убедимся, что кнопка над остальными элементами */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Легкая тень */
+}
+
+.theme-toggle-btn:hover {
+    background-color: #777; /* Изменение цвета фона при наведении */
+}
+
+
+
+
+
+/* Темный режим */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #777;
+}
+
+
+/* Темный режим */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Цвет кнопки для светлого режима */
+.theme-toggle-btn.light {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Цвет кнопки для темного режима */
+.theme-toggle-btn.dark {
+    background-color: #fff;
+    color: #000;
+}
+
+.theme-toggle-btn:hover {
+    opacity: 0.8;
+}
+
+
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+
+
+/* Скрытие элементов с анимацией */
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Показ элементов с анимацией */
+.visible {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: auto;
+}
+
+/* Переход для кнопок */
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+

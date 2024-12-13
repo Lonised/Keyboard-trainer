@@ -5,7 +5,8 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "electron . --inspect=5858"
+    "dev": "electron . --inspect=5858",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.1.2",
     "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2",
     "electron-reload": "^2.0.0-alpha.1",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",

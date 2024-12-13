@@ -94,6 +94,7 @@ button.dark-mode:hover {
     margin-bottom: 20px;
     transition: border-color 0.3s, color 0.3s;
     font-family: 'Montserrat', sans-serif;
+    text-align: left;
 }
 
 body.dark-mode #input-field {
